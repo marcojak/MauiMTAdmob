@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Plugin.MauiMTAdmob.Controls;assembly=Plugin.MauiMTAdmob"
+             x:Class="SampleMMTAdmob.MainPage">
+
+    <StackLayout>
+        <Label Text="Let's test an Admob Banner!" 
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+        <Label x:Name="myLabel" Text="Ads loading result" 
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Margin="5" Spacing="10" MinimumHeightRequest="200">
+                <Button Text="Load Banner" Clicked="LoadBanner" Margin="5"/>
+                <Frame Padding="5">
+                    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*">
+                        <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Interstitial" HorizontalTextAlignment="Center"/>
+                        <Button Grid.Row="1" Grid.Column="0" Text="Load" Clicked="LoadInterstitial_OnClicked" Margin="5"/>
+                        <Button Grid.Row="1" Grid.Column="1" Text="Show" Clicked="ShowInterstitial_OnClicked" Margin="5"/>
+                        <Button Grid.Row="1" Grid.Column="2" Text="Is Loaded" Clicked="IsLoadedInterstitial_OnClicked" Margin="5"/>
+                    </Grid>
+                </Frame>
+
+                <Frame Padding="5">
+                    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*">
+                        <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Rewarded" HorizontalTextAlignment="Center"/>
+                        <Button Grid.Row="1" Grid.Column="0" Text="Load" Clicked="LoadReward_OnClicked" Margin="5"/>
+                        <Button Grid.Row="1" Grid.Column="1" Text="Show" Clicked="ShowReward_OnClicked" Margin="5"/>
+                        <Button Grid.Row="1" Grid.Column="2" Text="Is Loaded" Clicked="IsRewardLoaded_OnClicked" Margin="5"/>
+                    </Grid>
+                </Frame>
+
+                <Frame Padding="5">
+                    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*">
+                        <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Rewarded Interstitial" HorizontalTextAlignment="Center"/>
+                        <Button Grid.Row="1" Grid.Column="0" Text="Load" Clicked="LoadRewardInterstitial_OnClicked" Margin="5"/>
+                        <Button Grid.Row="1" Grid.Column="1" Text="Show" Clicked="ShowRewardInterstitial_OnClicked" Margin="5"/>
+                        <Button Grid.Row="1" Grid.Column="2" Text="Is Loaded" Clicked="IsRewardLoadedInterstitial_OnClicked" Margin="5"/>
+                    </Grid>
+                </Frame>
+
+                <controls:MTAdView  BackgroundColor="Transparent"
+                                    x:Name="myAds"
+                                    AdsId="ca-app-pub-3940256099942544/6300978111"
+                                    AdSize="AnchoredAdaptive"
+                                    IsVisible="true"
+                                    AdsClicked="MyAds_AdsClicked"
+                                    AdsClosed="MyAds_AdVClosed"
+                                    AdsFailedToLoad="MyAds_AdFailedToLoad"              
+                                    AdsImpression="MyAds_AdVImpression"
+                                    AdsLoaded="MyAds_AdLoaded"
+                                    AdsOpened="MyAds_AdVOpened"/>
+
+                <Button Text="Next Page" Clicked="NextPage" Margin="5"/>
+            </StackLayout>
+        </ScrollView>
+        <Label Text="Events" HorizontalTextAlignment="Center"/>
+        <Label Text="Clear events" HorizontalTextAlignment="End" Margin="5">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ClearEvents"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <StackLayout x:Name="MyStack" Margin="5">
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
