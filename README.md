@@ -2,7 +2,7 @@
 
 #### Package name: Plugin.MauiMTAdmob
 #### Latest version: 1.0.0
-#### Nuget link: "To update when available"
+#### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 
 ## Current Status
 
