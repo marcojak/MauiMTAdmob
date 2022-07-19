@@ -1,6 +1,6 @@
 # MauiMTAdmob
 
-#### Package name: MauiMTAdmob
+#### Package name: Plugin.MauiMTAdmob
 #### Latest version: 1.0.0
 #### Nuget link: "To update when available"
 
