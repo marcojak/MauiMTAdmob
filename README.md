@@ -5,6 +5,9 @@
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Tutorial: https://www.mauiexpert.it/admob-for-maui-made-easy/
 
+
+If you are looking for the newer version of my plugin for Xamarin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
+
 ## Current Status
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
