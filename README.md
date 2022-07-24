@@ -36,3 +36,21 @@ If you are looking for the newer version of my plugin for Xamarin, you can visit
 | AdsLoaded       | OnInterstitialFailedToShow | OnUserEarnedReward   | OnUserEarnedReward        |
 | AdsOpened       | OnInterstitialClicked      | OnRewardedClicked    | OnRewardedClicked         |
 |                 | OnInterstitialImpression   |  |       |
+
+
+## Important for Android
+if you are receiving some errors about UMP while compiling your projects, add the following code to your csproj file:
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">		
+		<AndroidLibrary Include="Dependencies\user-messaging-platform-2.0.0.aar" Bind="false" />
+	</ItemGroup>
+
+Now, follow these steps:
+
+
+<ul>
+<li>Create a folder "Dependencies" in your project</li>
+<li>download the file user-messaging-platform-2.0.0.aar from internet or from this repository.</li>
+<li>Copy the file in this folder</li>
+<li>Build your project and everything will compile correctly</li>
+</ul>
