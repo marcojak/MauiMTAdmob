@@ -39,7 +39,7 @@ If you are looking for the newer version of my plugin for Xamarin, you can visit
 
 
 ## Important for Android
-### This shouldn't be required anymore since version 1.0.1
+
 if you are receiving some errors about UMP while compiling your projects, add the following code to your csproj file:
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">		
@@ -55,3 +55,5 @@ Now, follow these steps:
 <li>Copy the file in this folder</li>
 <li>Build your project and everything will compile correctly</li>
 </ul>
+
+### This might not be required anymore since version 1.0.1
