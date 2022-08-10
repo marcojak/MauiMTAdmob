@@ -56,4 +56,8 @@ Now, follow these steps:
 <li>Build your project and everything will compile correctly</li>
 </ul>
 
-### This might not be required anymore since version 1.0.1
+This might not be required anymore since version 1.0.1
+
+## Xamarin.Firebase.iOS.Core 8.10.0.1
+
+If you encounter this error while using this plugin, you can solve it following this comment: https://github.com/xamarin/GoogleApisForiOSComponents/issues/555#issuecomment-1145943195
