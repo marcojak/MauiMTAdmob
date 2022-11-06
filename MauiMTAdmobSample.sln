@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32708.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMMTAdmob", "SampleMMTAdmob\SampleMMTAdmob.csproj", "{E932287B-7244-43DF-A443-FCEEBBA6D3A1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiLib2", "MauiLib2\MauiLib2.csproj", "{0EA64AE1-CD80-4180-9E2C-029E8EBE2897}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{E932287B-7244-43DF-A443-FCEEBBA6D3A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E932287B-7244-43DF-A443-FCEEBBA6D3A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E932287B-7244-43DF-A443-FCEEBBA6D3A1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0EA64AE1-CD80-4180-9E2C-029E8EBE2897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA64AE1-CD80-4180-9E2C-029E8EBE2897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA64AE1-CD80-4180-9E2C-029E8EBE2897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA64AE1-CD80-4180-9E2C-029E8EBE2897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

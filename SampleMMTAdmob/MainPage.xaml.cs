@@ -1,6 +1,7 @@
-﻿using System.Diagnostics;
+﻿using MauiLib2;
 using Plugin.MauiMTAdmob;
 using Plugin.MauiMTAdmob.Extra;
+using System.Diagnostics;
 
 namespace SampleMMTAdmob
 {
@@ -11,13 +12,17 @@ namespace SampleMMTAdmob
         public string REWARDEDID = DeviceInfo.Platform == DevicePlatform.Android ? "ca-app-pub-3940256099942544/5224354917" : "ca-app-pub-3940256099942544/5224354917";
         public string REWARDINTERSTITIALID = DeviceInfo.Platform == DevicePlatform.Android ? "ca-app-pub-3940256099942544/5354046379" : "ca-app-pub-3940256099942544/5354046379";
 
-        public MainPage()
+        private readonly ITestService _testService;
+        public MainPage(ITestService testService)
         {
             InitializeComponent();
 
             CrossMauiMTAdmob.Current.TagForChildDirectedTreatment = MTTagForChildDirectedTreatment.TagForChildDirectedTreatmentUnspecified;
             CrossMauiMTAdmob.Current.TagForUnderAgeOfConsent = MTTagForUnderAgeOfConsent.TagForUnderAgeOfConsentUnspecified;
             CrossMauiMTAdmob.Current.MaxAdContentRating = MTMaxAdContentRating.MaxAdContentRatingG;
+
+            _testService = testService ?? throw new ArgumentNullException(nameof(testService));
+            testLabel.Text = _testService.SayHello();
         }
 
         ~MainPage()
@@ -82,7 +87,7 @@ namespace SampleMMTAdmob
 
         private void Current_OnRewardImpression(object sender, EventArgs e)
         {
-            MyStack.Add(new Label { Text= "Current_OnRewardImpression" });
+            MyStack.Add(new Label { Text = "Current_OnRewardImpression" });
             Debug.WriteLine("Current_OnRewardImpression");
         }
 
@@ -156,7 +161,7 @@ namespace SampleMMTAdmob
 
         private void NextPage(object sender, EventArgs e)
         {
-            App.Current.MainPage = new MainPage();
+            App.Current.MainPage = new MainPage(_testService);
         }
 
         private void LoadBanner(object sender, EventArgs e)

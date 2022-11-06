@@ -1,10 +1,11 @@
-﻿using Plugin.MauiMTAdmob;
+﻿using MauiLib2;
+using Plugin.MauiMTAdmob;
 
 namespace SampleMMTAdmob
 {
     public partial class App : Application
     {
-        public App()
+        public App(ITestService testService)
         {
             InitializeComponent();
 
@@ -15,7 +16,7 @@ namespace SampleMMTAdmob
             CrossMauiMTAdmob.Current.TestDevices = new List<string>() { };
 
             //MainPage = new NavigationPage(new MainPage());
-            MainPage = new MainPage();
+            MainPage = new MainPage(testService);
         }
     }
 }
