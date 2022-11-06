@@ -54,6 +54,7 @@
                                     AdsOpened="MyAds_AdVOpened"/>
 
                 <Button Text="Next Page" Clicked="NextPage" Margin="5"/>
+                <Label x:Name="testLabel" />
             </StackLayout>
         </ScrollView>
         <Label Text="Events" HorizontalTextAlignment="Center"/>
