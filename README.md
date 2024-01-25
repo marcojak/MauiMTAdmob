@@ -1,42 +1,50 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 1.0.1
+#### Latest version: 1.1.0
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Tutorial: https://www.mauiexpert.it/admob-for-maui-made-easy/
+#### To buy the license visit https://hightouchinnovation.com/MMTAdmob
 
 
-If you are looking for the newer version of my plugin for Xamarin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
+**The licensed version unlocks the mandatory Consent required by Google since the 16th of January. 
+If you like, you can use the unlicensed version of the plugin and implement your choice of Certified CMP.
+The license will help me to continue updating and supporting this plugin adding all the newer features that Google implements.**
 
-## Current Status
+If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
+
+## Current Status (Version 1.1.0)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
 | Banner                |     :heavy_check_mark:     |   :heavy_check_mark:      |    :x:  |    :x:  |
 | Interstitial          |     :heavy_check_mark:     |  :heavy_check_mark:       |    :x:  |    :x:  |
 | Rewarded              |    :heavy_check_mark:    |    :heavy_check_mark:     |    :x:  |    :x:  |
-| Rewarded Interstitial |   :heavy_check_mark:    |    :x:  |    :x:  |    :x:  |
+| Rewarded Interstitial |   :heavy_check_mark:    |    :x:*  |    :x:  |    :x:  |
 
+*They are implemented but currently, they are not working. Probably something in the Admob SDK. I'm investigating it.
 
 ## Methods
 | **Banner** | **Interstitial**     | **Rewarded**     | **Rewarded Interstitial**  |
 |:----------:|--------------------|----------------|--------------------------|
-| LoadAd     | LoadInterstitial     | LoadRewarded     | LoadRewardInterstitial     |
-|            | ShowInterstitial     | ShowRewarded     | ShowRewardInterstitial     |
-|            | IsInterstitialLoaded | IsRewardedLoaded | IsRewardInterstitialLoaded |
+| LoadAd     | LoadInterstitial     | LoadRewarded     | LoadRewardedInterstitial     |
+|            | ShowInterstitial     | ShowRewarded     | ShowRewardedInterstitial     |
+|            | IsInterstitialLoaded | IsRewardedLoaded | IsRewardedInterstitialLoaded |
 
 
 ## Events
 | **Banner**      | **Interstitial**           | **Rewarded**         | **Rewarded Interstitial** |
 |-----------------|----------------------------|----------------------|---------------------------|
-| AdsClicked      | OnInterstitialLoaded       | OnRewardedLoaded     | OnRewardedLoaded          |
-| AdsClosed       | OnInterstitialOpened       | OnRewardedOpened     | OnRewardedOpened          |
-| AdsFailedToLoad | OnInterstitialClosed       | OnRewardedClosed     | OnRewardedClosed          |
-| AdsImpression   | OnInterstitialFailedToLoad | OnRewardedImpression | OnRewardedImpression      |
-| AdsLoaded       | OnInterstitialFailedToShow | OnUserEarnedReward   | OnUserEarnedReward        |
-| AdsOpened       | OnInterstitialClicked      | OnRewardedClicked    | OnRewardedClicked         |
-|                 | OnInterstitialImpression   |  |       |
+| AdsLoaded       | OnInterstitialLoaded       | OnRewardedLoaded     | OnRewardedLoaded          |
+| AdsFailedToLoad | OnInterstitialFailedToLoad | OnRewardedFailedToLoad| OnRewardedFailedToLoad|
+| AdsImpression   | OnInterstitialImpression   | OnRewardedImpression | OnRewardedImpression |
+| AdsClicked      | OnInterstitialOpened	   | OnRewardedOpened	  | OnRewardedOpened	  |
+| AdsOpened		  | OnInterstitialFailedToShow | OnRewardedFailedToShow| OnRewardedFailedToShow|
+| AdsClosed       | OnInterstitialClosed	   | OnRewardedClosed	  | OnRewardedClosed	  |
+| AdsSwiped 	  | OnInterstitialClicked*     | OnRewardedClicked*   | OnRewardedClicked*|
+|  				  | 						   | OnUserEarnedReward   | OnUserEarnedReward|
 
+*Only supported on iOS
 
 ## Important for Android
 
