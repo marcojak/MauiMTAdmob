@@ -1,6 +1,6 @@
 ﻿using Plugin.MauiMTAdmob;
 
-namespace SampleMMTAdmob
+namespace MMTAdmobSample
 {
     public partial class App : Application
     {
@@ -14,7 +14,6 @@ namespace SampleMMTAdmob
             CrossMauiMTAdmob.Current.AdsId = DeviceInfo.Platform == DevicePlatform.Android ? "ca-app-pub-3940256099942544/6300978111" : "ca-app-pub-3940256099942544/2934735716";
             CrossMauiMTAdmob.Current.TestDevices = new List<string>() { };
 
-            //MainPage = new NavigationPage(new MainPage());
             MainPage = new MainPage();
         }
     }

@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace SampleMMTAdmob
+namespace MMTAdmobSample
 {
     public class Program
     {

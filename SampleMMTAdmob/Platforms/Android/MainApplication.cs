@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace SampleMMTAdmob
+namespace MMTAdmobSample
 {
     [Application]
     public class MainApplication : MauiApplication

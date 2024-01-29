@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace SampleMMTAdmob
+namespace MMTAdmobSample
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

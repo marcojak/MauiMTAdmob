@@ -1,7 +1,6 @@
-﻿
-using Plugin.MauiMTAdmob;
+﻿using Plugin.MauiMTAdmob;
 
-namespace SampleMMTAdmob
+namespace MMTAdmobSample
 {
     public static class MauiProgram
     {
@@ -16,6 +15,8 @@ namespace SampleMMTAdmob
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            //DependencyService.Register<IUMP, UMPDroid>();
 
             return builder.Build();
         }
