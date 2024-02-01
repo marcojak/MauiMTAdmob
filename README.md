@@ -1,7 +1,7 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 1.1.1
+#### Latest version: 1.1.2
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Tutorial: https://www.mauiexpert.it/admob-for-maui-made-easy/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
