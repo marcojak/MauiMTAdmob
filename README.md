@@ -14,7 +14,7 @@ The license will help me to continue updating and supporting this plugin adding 
 
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 1.1.1)
+## Current Status (Version 1.1.2)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
