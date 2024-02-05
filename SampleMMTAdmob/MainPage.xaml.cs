@@ -15,7 +15,7 @@ namespace MMTAdmobSample
         {
             InitializeComponent();
 
-            CrossMauiMTAdmob.Current.TestDevices = new List<string> { "C44999673C1A6EDCE0DA791B8E5436C1" };
+            CrossMauiMTAdmob.Current.TestDevices = new List<string> { };
 
             CrossMauiMTAdmob.Current.TagForChildDirectedTreatment = MTTagForChildDirectedTreatment.TagForChildDirectedTreatmentUnspecified;
             CrossMauiMTAdmob.Current.TagForUnderAgeOfConsent = MTTagForUnderAgeOfConsent.TagForUnderAgeOfConsentUnspecified;
@@ -56,6 +56,14 @@ namespace MMTAdmobSample
                 CrossMauiMTAdmob.Current.OnInterstitialFailedToShow += Current_OnInterstitialFailedToShow;
                 CrossMauiMTAdmob.Current.OnInterstitialOpened += Current_OnInterstitialOpened;
                 CrossMauiMTAdmob.Current.OnInterstitialClosed += Current_OnInterstitialClosed;
+
+                CrossMauiMTAdmob.Current.OnAppOpenAdLoaded += Current_OnAppOpenAdLoaded;
+                CrossMauiMTAdmob.Current.OnAppOpenOpened += Current_OnAppOpenOpened;
+                CrossMauiMTAdmob.Current.OnAppOpenClosed += Current_OnAppOpenClosed;
+                CrossMauiMTAdmob.Current.OnAppOpenFailedToLoad += Current_OnAppOpenFailedToLoad;
+                CrossMauiMTAdmob.Current.OnAppOpenFailedToShow += Current_OnAppOpenFailedToShow;
+                CrossMauiMTAdmob.Current.OnAppOpenImpression += Current_OnAppOpenImpression;
+                CrossMauiMTAdmob.Current.OnAppOpenClicked += Current_OnAppOpenClicked;
             }
         }
 
@@ -76,6 +84,14 @@ namespace MMTAdmobSample
             CrossMauiMTAdmob.Current.OnInterstitialFailedToShow -= Current_OnInterstitialFailedToShow;
             CrossMauiMTAdmob.Current.OnInterstitialOpened -= Current_OnInterstitialOpened;
             CrossMauiMTAdmob.Current.OnInterstitialClosed -= Current_OnInterstitialClosed;
+
+            CrossMauiMTAdmob.Current.OnAppOpenAdLoaded -= Current_OnAppOpenAdLoaded;
+            CrossMauiMTAdmob.Current.OnAppOpenOpened -= Current_OnAppOpenOpened;
+            CrossMauiMTAdmob.Current.OnAppOpenClosed -= Current_OnAppOpenClosed;
+            CrossMauiMTAdmob.Current.OnAppOpenFailedToLoad -= Current_OnAppOpenFailedToLoad;
+            CrossMauiMTAdmob.Current.OnAppOpenFailedToShow -= Current_OnAppOpenFailedToShow;
+            CrossMauiMTAdmob.Current.OnAppOpenImpression -= Current_OnAppOpenImpression;
+            CrossMauiMTAdmob.Current.OnAppOpenClicked -= Current_OnAppOpenClicked;
         }
 
         private void Current_OnRewardImpression(object sender, EventArgs e)
@@ -280,6 +296,48 @@ namespace MMTAdmobSample
         {
             var canShow = CrossMauiMTAdmob.Current.CanShowLimitedAds();
             MyStack.Add(new Label { Text = $"LA: {canShow}" });
+        }
+
+        private void Current_OnAppOpenAdLoaded(object sender, EventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On App Open Ad Loaded" });
+            Debug.WriteLine("OnAppOpenAdLoaded");
+        }
+
+        private void Current_OnAppOpenOpened(object sender, EventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On App Open Opened" });
+            Debug.WriteLine("OnAppOpenOpened");
+        }
+
+        private void Current_OnAppOpenClosed(object sender, EventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On App Open Closed" });
+            Debug.WriteLine("OnAppOpenClosed");
+        }
+
+        private void Current_OnAppOpenFailedToLoad(object sender, MTEventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On App Open Failed To Load" });
+            Debug.WriteLine($"Current_OnAppOpenFailedToLoad: {e.ErrorCode} - {e.ErrorMessage}");
+        }
+
+        private void Current_OnAppOpenFailedToShow(object sender, MTEventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On App Open Failed To Show" });
+            Console.WriteLine($"Current_OnAppOpenFailedToShow: {e.ErrorCode} - {e.ErrorMessage}");
+        }
+
+        private void Current_OnAppOpenImpression(object sender, EventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On App Open Impression" });
+            Debug.WriteLine("Current_OnAppOpenImpression");
+        }
+
+        private void Current_OnAppOpenClicked(object sender, EventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On App Open Clicked" });
+            Debug.WriteLine("Current_OnAppOpenClicked");
         }
     }
 }
