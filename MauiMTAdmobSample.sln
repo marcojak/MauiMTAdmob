@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32708.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMMTAdmob", "SampleMMTAdmob\MMTAdmobSample.csproj", "{E932287B-7244-43DF-A443-FCEEBBA6D3A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMTAdmobSample", "SampleMMTAdmob\MMTAdmobSample.csproj", "{E932287B-7244-43DF-A443-FCEEBBA6D3A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMTAdmobSample7", "MMTAdmobSample7\MMTAdmobSample7.csproj", "{AB112955-F989-45EC-8C95-AD6DD6BD3F53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,12 @@ Global
 		{E932287B-7244-43DF-A443-FCEEBBA6D3A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E932287B-7244-43DF-A443-FCEEBBA6D3A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E932287B-7244-43DF-A443-FCEEBBA6D3A1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

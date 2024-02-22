@@ -1,6 +1,6 @@
 ﻿using Plugin.MauiMTAdmob;
 
-namespace MMTAdmobSample
+namespace MMTAdmobSample7
 {
     public static class MauiProgram
     {

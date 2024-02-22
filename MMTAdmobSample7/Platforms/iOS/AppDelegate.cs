@@ -2,7 +2,7 @@
 using Plugin.MauiMTAdmob;
 using UIKit;
 
-namespace MMTAdmobSample
+namespace MMTAdmobSample7
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

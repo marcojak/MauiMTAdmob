@@ -1,9 +1,9 @@
+
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 1.2.0
+#### Latest version: 1.3.0
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
-#### Tutorial: https://www.mauiexpert.it/admob-for-maui-made-easy/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
 
@@ -14,7 +14,7 @@ The license will help me to continue updating and supporting this plugin adding 
 
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 1.2.0)
+## Current Status (Version 1.3.0)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
@@ -23,8 +23,11 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 | Rewarded              |    :heavy_check_mark:    |    :heavy_check_mark:     |    :x:  |    :x:  |
 | Rewarded Interstitial |   :heavy_check_mark:    |    :x:*  |    :x:  |    :x:  |
 | App Open Ads          |     :heavy_check_mark:     |   :heavy_check_mark:      |    :x:  |    :x:  |
+| Native Ads          |     :heavy_check_mark:     |   :x:**      |    :x:  |    :x:  |
 
 *They are implemented but currently, they are not working. Probably something in the Admob SDK. I'm investigating it.
+
+** I'm planning to add them in one of the next version, as soon as I fix some issues with the iOS SDK.
 
 ## Methods
 | **Banner** | **Interstitial**     | **Rewarded**     | **Rewarded Interstitial**  | **App Open Ads**  |
@@ -35,15 +38,15 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 
 
 ## Events
-| **Banner**      | **Interstitial**           | **Rewarded**         | **Rewarded Interstitial** | **App Open Ads** |
-|-----------------|----------------------------|----------------------|---------------------------|------------------|
-| AdsLoaded       | OnInterstitialLoaded       | OnRewardedLoaded     | OnRewardedLoaded          |OnAppOpenAdLoaded|
-| AdsFailedToLoad | OnInterstitialFailedToLoad | OnRewardedFailedToLoad| OnRewardedFailedToLoad|OnAppOpenFailedToLoad|
-| AdsImpression   | OnInterstitialImpression   | OnRewardedImpression | OnRewardedImpression |OnAppOpenImpression**|
-| AdsClicked      | OnInterstitialOpened	   | OnRewardedOpened	  | OnRewardedOpened	  |OnAppOpenOpened**|
-| AdsOpened		  | OnInterstitialFailedToShow | OnRewardedFailedToShow| OnRewardedFailedToShow|OnAppOpenFailedToShow**|
-| AdsClosed       | OnInterstitialClosed	   | OnRewardedClosed	  | OnRewardedClosed	  |OnAppOpenClosed**|
-| AdsSwiped 	  | OnInterstitialClicked*     | OnRewardedClicked*   | OnRewardedClicked*|OnAppOpenClicked**|
+| **Banner**      | **Interstitial**           | **Rewarded**         | **Rewarded Interstitial** | **App Open Ads** | **Native Ads** |
+|-----------------|----------------------------|----------------------|---------------------------|------------------|------------------|
+| AdsLoaded       | OnInterstitialLoaded       | OnRewardedLoaded     | OnRewardedLoaded          |OnAppOpenAdLoaded|OnNativeAdLoaded|
+| AdsFailedToLoad | OnInterstitialFailedToLoad | OnRewardedFailedToLoad| OnRewardedFailedToLoad|OnAppOpenFailedToLoad|OnNativeFailedToLoad|
+| AdsImpression   | OnInterstitialImpression   | OnRewardedImpression | OnRewardedImpression |OnAppOpenImpression**|OnNativeImpression**|
+| AdsClicked      | OnInterstitialOpened	   | OnRewardedOpened	  | OnRewardedOpened	  |OnAppOpenOpened**|OnNativeOpened**|
+| AdsOpened		  | OnInterstitialFailedToShow | OnRewardedFailedToShow| OnRewardedFailedToShow|OnAppOpenFailedToShow**|OnNativeFailedToShow**|
+| AdsClosed       | OnInterstitialClosed	   | OnRewardedClosed	  | OnRewardedClosed	  |OnAppOpenClosed**|OnNativeClosed**|
+| AdsSwiped 	  | OnInterstitialClicked*     | OnRewardedClicked*   | OnRewardedClicked*|OnAppOpenClicked**|OnNativeClicked**|
 |  				  | 						   | OnUserEarnedReward   | OnUserEarnedReward||
 
 *Only supported on iOS

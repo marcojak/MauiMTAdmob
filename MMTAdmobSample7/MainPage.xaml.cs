@@ -2,7 +2,7 @@
 using Plugin.MauiMTAdmob.Extra;
 using System.Diagnostics;
 
-namespace MMTAdmobSample
+namespace MMTAdmobSample7
 {
     public partial class MainPage : ContentPage
     {
@@ -51,11 +51,13 @@ namespace MMTAdmobSample
 
                 CrossMauiMTAdmob.Current.OnUserEarnedReward += Current_OnUserEarnedReward;
 
+
                 CrossMauiMTAdmob.Current.OnInterstitialLoaded += Current_OnInterstitialLoaded;
                 CrossMauiMTAdmob.Current.OnInterstitialFailedToLoad += Current_OnInterstitialFailedToLoad;
                 CrossMauiMTAdmob.Current.OnInterstitialFailedToShow += Current_OnInterstitialFailedToShow;
                 CrossMauiMTAdmob.Current.OnInterstitialOpened += Current_OnInterstitialOpened;
                 CrossMauiMTAdmob.Current.OnInterstitialClosed += Current_OnInterstitialClosed;
+
 
                 CrossMauiMTAdmob.Current.OnAppOpenAdLoaded += Current_OnAppOpenAdLoaded;
                 CrossMauiMTAdmob.Current.OnAppOpenOpened += Current_OnAppOpenOpened;
@@ -64,8 +66,9 @@ namespace MMTAdmobSample
                 CrossMauiMTAdmob.Current.OnAppOpenFailedToShow += Current_OnAppOpenFailedToShow;
                 CrossMauiMTAdmob.Current.OnAppOpenImpression += Current_OnAppOpenImpression;
                 CrossMauiMTAdmob.Current.OnAppOpenClicked += Current_OnAppOpenClicked;
+
                 CrossMauiMTAdmob.Current.OnMobileAdsInitialized += Current_OnMobileAdsInitialized;
-              
+
                 CrossMauiMTAdmob.Current.OnNativeAdLoaded += Current_OnNativeAdLoaded;
                 CrossMauiMTAdmob.Current.OnNativeAdFailedToLoad += Current_OnNativeAdFailedToLoad;
                 CrossMauiMTAdmob.Current.OnNativeAdImpression += Current_OnNativeAdImpression;
@@ -314,6 +317,7 @@ namespace MMTAdmobSample
             var canShow = CrossMauiMTAdmob.Current.CanShowLimitedAds();
             MyStack.Add(new Label { Text = $"LA: {canShow}" });
         }
+
         private void Current_OnAppOpenAdLoaded(object sender, EventArgs e)
         {
             MyStack.Add(new Label { Text = "On App Open Ad Loaded" });
@@ -371,6 +375,7 @@ namespace MMTAdmobSample
         {
             myNativeAds.ShowNativeAd();
         }
+
         private void Current_OnNativeAdLoaded(object sender, EventArgs e)
         {
             MyStack.Add(new Label { Text = "On Native Ad Loaded" });

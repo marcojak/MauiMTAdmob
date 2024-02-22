@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Plugin.MauiMTAdmob.Controls;assembly=Plugin.MauiMTAdmob"
-             x:Class="MMTAdmobSample.MainPage">
+             x:Class="MMTAdmobSample7.MainPage">
 
     <ContentPage.Resources>
         <ControlTemplate x:Key="TestTemplate1">
@@ -55,7 +55,7 @@
             </Border>
         </ControlTemplate>
     </ContentPage.Resources>
-
+    
     <StackLayout>
         <Label Text="MTAdmob" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start" />
         <ScrollView VerticalOptions="FillAndExpand">
