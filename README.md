@@ -12,6 +12,15 @@
 If you like, you can use the unlicensed version of the plugin and implement your choice of Certified CMP.
 The license will help me to continue updating and supporting this plugin adding all the newer features that Google implements.**
 
+**App Onen Ads and Native Ads are available only in the licensed version**
+
+## Important for iOS
+
+The Xamarin.Google.iOS.UserMessagingPlatform plugin contains an error. To fix it check the fix at https://hightouchinnovation.com/MMTAdmobGuide
+
+<br><br><br>
+
+
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
 ## Current Status (Version 1.3.1)
