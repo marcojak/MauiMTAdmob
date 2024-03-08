@@ -57,6 +57,6 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-		<PackageReference Include="Xamarin.Google.iOS.UserMessagingPlatform" Version="1.1.0.1" />
+		<PackageReference Include="MT.Xamarin.Google.iOS.UserMessagingPlatform" Version="1.1.0.4" />
 	</ItemGroup>
 </Project>
