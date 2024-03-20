@@ -91,30 +91,42 @@
                 </Frame>
 
                 <Frame Padding="5">
-                    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*">
-                        <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Interstitial"/>
-                        <Button Grid.Row="1" Grid.Column="0" Text="Load" Clicked="LoadInterstitial_OnClicked" Margin="5"/>
-                        <Button Grid.Row="1" Grid.Column="1" Text="Show" Clicked="ShowInterstitial_OnClicked" Margin="5"/>
-                        <Button Grid.Row="1" Grid.Column="2" Text="Is Loaded" Clicked="IsLoadedInterstitial_OnClicked" Margin="5"/>
-                    </Grid>
+                    <StackLayout>
+                        <Label Text="Interstitial"/>
+                        <FlexLayout AlignItems="Center" JustifyContent="Center" Wrap="Wrap">
+                            <Button Text="Load" Clicked="LoadInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="Show" Clicked="ShowInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="Is Loaded" Clicked="IsLoadedInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="N. of loaded ads" Clicked="GetNumOfLoadedInterstitials" Margin="2"/>
+                            <Button Text="Empty list" Clicked="EmptyInterstitialList" Margin="2"/>
+                        </FlexLayout>
+                    </StackLayout>
                 </Frame>
 
                 <Frame Padding="5">
-                    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*">
-                        <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Rewarded"/>
-                        <Button Grid.Row="1" Grid.Column="0" Text="Load" Clicked="LoadReward_OnClicked" Margin="5"/>
-                        <Button Grid.Row="1" Grid.Column="1" Text="Show" Clicked="ShowReward_OnClicked" Margin="5"/>
-                        <Button Grid.Row="1" Grid.Column="2" Text="Is Loaded" Clicked="IsRewardLoaded_OnClicked" Margin="5"/>
-                    </Grid>
+                    <StackLayout>
+                        <Label Text="Rewarded"/>
+                        <FlexLayout AlignItems="Center" JustifyContent="Center" Wrap="Wrap">
+                            <Button Text="Load" Clicked="LoadReward_OnClicked" Margin="2"/>
+                            <Button Text="Show" Clicked="ShowReward_OnClicked" Margin="2"/>
+                            <Button Text="Is Loaded" Clicked="IsRewardLoaded_OnClicked" Margin="2"/>
+                            <Button Text="N. of loaded ads" Clicked="GetNumOfLoadedRewarded" Margin="2"/>
+                            <Button Text="Empty list" Clicked="EmptyRewardedList" Margin="2"/>
+                        </FlexLayout>
+                    </StackLayout>
                 </Frame>
 
                 <Frame Padding="5">
-                    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*">
-                        <Label Grid.Row="0" Grid.ColumnSpan="3" Text="Rewarded Interstitial"/>
-                        <Button Grid.Row="1" Grid.Column="0" Text="Load" Clicked="LoadRewardInterstitial_OnClicked" Margin="5"/>
-                        <Button Grid.Row="1" Grid.Column="1" Text="Show" Clicked="ShowRewardInterstitial_OnClicked" Margin="5"/>
-                        <Button Grid.Row="1" Grid.Column="2" Text="Is Loaded" Clicked="IsRewardLoadedInterstitial_OnClicked" Margin="5"/>
-                    </Grid>
+                    <StackLayout>
+                        <Label Text="Rewarded Interstitial"/>
+                        <FlexLayout AlignItems="Center" JustifyContent="Center" Wrap="Wrap">
+                            <Button Text="Load" Clicked="LoadRewardInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="Show" Clicked="ShowRewardInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="Is Loaded" Clicked="IsRewardLoadedInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="N. of loaded ads" Clicked="GetNumOfLoadedRewardedInterstitial" Margin="2"/>
+                            <Button Text="Empty list" Clicked="EmptyRewardedInterstitialList" Margin="2"/>
+                        </FlexLayout>
+                    </StackLayout>
                 </Frame>
 
                 <Border>

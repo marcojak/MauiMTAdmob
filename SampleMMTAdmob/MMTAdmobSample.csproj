@@ -58,9 +58,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Plugin.MauiMTAdmob" Version="1.3.2" />
+		<PackageReference Include="Plugin.MauiMTAdmob" Version="1.4.1" />
 		<PackageReference Include="Xamarin.Build.Download" Version="0.11.4" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.7" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.10" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.10" />
 	</ItemGroup>
 </Project>

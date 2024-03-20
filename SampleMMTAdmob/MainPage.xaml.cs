@@ -205,12 +205,22 @@ namespace MMTAdmobSample
             CrossMauiMTAdmob.Current.ShowInterstitial();
         }
 
-        private void IsLoadedInterstitial_OnClicked(object sender, EventArgs e)
-        {
-            myLabel.Text = "Interstitial loaded: " + CrossMauiMTAdmob.Current.IsInterstitialLoaded().ToString();
-        }
+		private void IsLoadedInterstitial_OnClicked(object sender, EventArgs e)
+		{
+			myLabel.Text = "Interstitial loaded: " + CrossMauiMTAdmob.Current.IsInterstitialLoaded().ToString();
+		}
 
-        private void LoadReward_OnClicked(object sender, EventArgs e)
+		private void GetNumOfLoadedInterstitials(object sender, EventArgs e)
+		{
+			myLabel.Text = "Loaded Interstitials: " + CrossMauiMTAdmob.Current.GetNumberOfInterstitialsLoaded().ToString();
+		}
+
+		private void EmptyInterstitialList(object sender, EventArgs e)
+		{
+			CrossMauiMTAdmob.Current.EmptyInterstitialAdsList();
+		}
+
+		private void LoadReward_OnClicked(object sender, EventArgs e)
         {
             CrossMauiMTAdmob.Current.LoadRewarded(REWARDEDID);
         }
@@ -225,7 +235,17 @@ namespace MMTAdmobSample
             myLabel.Text = "Rewarded loaded: " + CrossMauiMTAdmob.Current.IsRewardedLoaded().ToString();
         }
 
-        private void LoadRewardInterstitial_OnClicked(object sender, EventArgs e)
+		private void GetNumOfLoadedRewarded(object sender, EventArgs e)
+		{
+			myLabel.Text = "Loaded Rewarded: " + CrossMauiMTAdmob.Current.GetNumberOfRewarededLoaded().ToString();
+		}
+
+		private void EmptyRewardedList(object sender, EventArgs e)
+		{
+			CrossMauiMTAdmob.Current.EmptyRewardedAdsList();
+		}
+
+		private void LoadRewardInterstitial_OnClicked(object sender, EventArgs e)
         {
             CrossMauiMTAdmob.Current.LoadRewardInterstitial(REWARDINTERSTITIALID);
         }
@@ -240,7 +260,17 @@ namespace MMTAdmobSample
             myLabel.Text = "Rewarded Interstitial loaded: " + CrossMauiMTAdmob.Current.IsRewardInterstitialLoaded().ToString();
         }
 
-        private void MyAds_AdVOpened(object sender, EventArgs e)
+		private void EmptyRewardedInterstitialList(object sender, EventArgs e)
+		{
+			CrossMauiMTAdmob.Current.EmptyRewardInterstitialAdsList();
+		}
+
+		private void GetNumOfLoadedRewardedInterstitial(object sender, EventArgs e)
+		{
+			myLabel.Text = "Loaded Rewarded Interstitial: " + CrossMauiMTAdmob.Current.GetNumberOfRewarededInterstitialsLoaded().ToString();
+		}
+
+		private void MyAds_AdVOpened(object sender, EventArgs e)
         {
             MyStack.Add(new Label { Text = "MyAds_AdVOpened" });
             Debug.WriteLine("MyAds_AdVOpened");
@@ -314,6 +344,7 @@ namespace MMTAdmobSample
             var canShow = CrossMauiMTAdmob.Current.CanShowLimitedAds();
             MyStack.Add(new Label { Text = $"LA: {canShow}" });
         }
+
         private void Current_OnAppOpenAdLoaded(object sender, EventArgs e)
         {
             MyStack.Add(new Label { Text = "On App Open Ad Loaded" });
@@ -406,5 +437,5 @@ namespace MMTAdmobSample
             MyStack.Add(new Label { Text = "On Native Ad Closed" });
             Debug.WriteLine("Current_OnNativeAdClosed");
         }
-    }
+	}
 }
