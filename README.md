@@ -2,7 +2,7 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 1.4.1
+#### Latest version: 1.4.2
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
@@ -17,7 +17,7 @@ The license will help me to continue updating and supporting this plugin adding 
 
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 1.4.1)
+## Current Status (Version 1.4.2)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
@@ -58,6 +58,6 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 
 ## Important for iOS
 
-## Xamarin.Firebase.iOS.Core 8.10.0.1
-
-If you encounter this error while using this plugin, you can solve it following this comment: https://github.com/xamarin/GoogleApisForiOSComponents/issues/555#issuecomment-1145943195
+As the package Xamarin.Google.Mobile.iOS.MobileAds doesn't work on Windows, you need a MAC to test this library.
+If you connect your iOS device directly to Windows and run it, the library will not work.
+Unfortunately, this issue doesn't depend on this library so I cannot solve this.
