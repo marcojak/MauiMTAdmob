@@ -21,6 +21,7 @@ namespace MMTAdmobSample
             CrossMauiMTAdmob.Current.TagForUnderAgeOfConsent = MTTagForUnderAgeOfConsent.TagForUnderAgeOfConsentUnspecified;
             CrossMauiMTAdmob.Current.MaxAdContentRating = MTMaxAdContentRating.MaxAdContentRatingG;
             CrossMauiMTAdmob.Current.AdChoicesCorner = AdChoicesCorner.ADCHOICES_BOTTOM_RIGHT;
+            CrossMauiMTAdmob.Current.MaximumNumberOfAdsCached = 3;
         }
 
         protected override void OnAppearing()
@@ -191,8 +192,20 @@ namespace MMTAdmobSample
         }
 
         private void LoadBanner(object sender, EventArgs e)
+        {            
+            myAds.LoadAd(GetCollapsibleMode());
+        }
+
+        private CollapsibleBannerMode GetCollapsibleMode()
         {
-            myAds.LoadAd();
+            if (rbNone.IsChecked)
+                return CollapsibleBannerMode.None;
+            if (rbTop.IsChecked)
+                return CollapsibleBannerMode.Top;
+            if (rbBottom.IsChecked)
+                return CollapsibleBannerMode.Bottom;
+
+            return CollapsibleBannerMode.None;
         }
 
         private void LoadInterstitial_OnClicked(object sender, EventArgs e)
@@ -437,5 +450,11 @@ namespace MMTAdmobSample
             MyStack.Add(new Label { Text = "On Native Ad Closed" });
             Debug.WriteLine("Current_OnNativeAdClosed");
         }
-	}
+
+        private void ShowConsent(object sender, EventArgs e)
+        {
+            CrossMauiMTAdmob.Current.InitialiseAndShowConsentForm();
+            Debug.WriteLine("Initialise And Show Consent Form");
+        }
+    }
 }
