@@ -62,3 +62,16 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 As the package Xamarin.Google.Mobile.iOS.MobileAds doesn't work on Windows, you need a MAC to test this library.
 If you connect your iOS device directly to Windows and run it, the library will not work.
 Unfortunately, this issue doesn't depend on this library so I cannot solve this.
+
+### FOR MAC USERS WITH Mx PROCESSORS
+
+If you compile the app on a Mac with Mx processors, you could get an error about architecture,
+to fix it, add to your csproj file these lines:
+
+    <PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+        <RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ForceSimulatorX64ArchitectureInIDE>true</ForceSimulatorX64ArchitectureInIDE>
+    </PropertyGroup>
