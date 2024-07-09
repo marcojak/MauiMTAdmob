@@ -14,14 +14,14 @@ namespace MMTAdmobSample
 
             string appId = "ca-app-pub-3940256099942544~3347511713";
 
-            string license = "ZIrXQSue3vFYNfMSzKXkSpLDaAdnqa4B0ByE/n2Tm1JUiOBuzmBCKac7WnAQ5PlWgfJT/KAPyX9D0ImZ"; //<-- Your license key here
+            string license = "ZIrXQSue3vFYNfMSzKXkStXSLUgy6vEfkwHfvSnC1lBKifhqgmAOL6QzX3YZdz6q/9yWdo1LWRxQy3pBHuapiubn7tcVNE8Z8A=="; //<-- Your license key here
             string deviceId = ""; //<--- Your test device id here
             string OPENADS_AD_UNIT_ID = "ca-app-pub-3940256099942544/9257395921";
             string NATIVEADS_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
             bool enableOpenAds = false;
-
+            bool initialiseConsentAtStartup = false;
             //If you have a license code:
-            CrossMauiMTAdmob.Current.Init(this, appId, license, NATIVEADS_AD_UNIT_ID,OPENADS_AD_UNIT_ID, enableOpenAds, false, deviceId, true, Plugin.MauiMTAdmob.Extra.DebugGeography.DEBUG_GEOGRAPHY_EEA);
+            CrossMauiMTAdmob.Current.Init(this, appId, license, NATIVEADS_AD_UNIT_ID,OPENADS_AD_UNIT_ID, enableOpenAds, false, deviceId, true, Plugin.MauiMTAdmob.Extra.DebugGeography.DEBUG_GEOGRAPHY_EEA, initialiseConsentAtStartup);
 
             //If you don't have a license code, you can use the following line instead:
             //CrossMauiMTAdmob.Current.Init(this, appId);

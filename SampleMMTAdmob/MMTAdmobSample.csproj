@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
 	<PropertyGroup>
 		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
 		<!--<TargetFrameworks>net8.0-ios</TargetFrameworks>-->
@@ -20,6 +21,8 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
+		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">16.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
@@ -27,6 +30,19 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+	</PropertyGroup>
+
+	<!--<PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ForceSimulatorX64ArchitectureInIDE>true</ForceSimulatorX64ArchitectureInIDE>
+	</PropertyGroup>-->
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -46,8 +62,8 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-		<PackageReference Include="Xamarin.GooglePlayServices.Ads.Lite" Version="122.3.0.2" />
-		<PackageReference Include="Xamarin.Google.UserMessagingPlatform" Version="2.1.0.2" />
+		<PackageReference Include="Xamarin.GooglePlayServices.Ads.Lite" Version="122.3.0.4" />
+		<PackageReference Include="Xamarin.Google.UserMessagingPlatform" Version="2.2.0.1" />
 		<PackageReference Include="Xamarin.AndroidX.Collection" Version="1.3.0.2" />
 		<PackageReference Include="Xamarin.AndroidX.Collection.Ktx" Version="1.3.0.2" />
 	</ItemGroup>
@@ -58,9 +74,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Plugin.MauiMTAdmob" Version="1.4.1" />
+		<PackageReference Include="Plugin.MauiMTAdmob" Version="1.4.5" />
 		<PackageReference Include="Xamarin.Build.Download" Version="0.11.4" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.10" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.10" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
 	</ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties XamarinHotReloadDebuggerTimeoutExceptionMMTAdmobSampleHideInfoBar="True" />
+		</VisualStudio>
+	</ProjectExtensions>
 </Project>

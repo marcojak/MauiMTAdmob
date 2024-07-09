@@ -237,7 +237,7 @@ namespace MMTAdmobSample7
 
 		private void GetNumOfLoadedRewarded(object sender, EventArgs e)
 		{
-			myLabel.Text = "Loaded Rewarded: " + CrossMauiMTAdmob.Current.GetNumberOfRewarededLoaded().ToString();
+			myLabel.Text = "Loaded Rewarded: " + CrossMauiMTAdmob.Current.GetNumberOfRewardedLoaded().ToString();
 		}
 
 		private void EmptyRewardedList(object sender, EventArgs e)
@@ -267,7 +267,7 @@ namespace MMTAdmobSample7
 
 		private void GetNumOfLoadedRewardedInterstitial(object sender, EventArgs e)
 		{
-			myLabel.Text = "Loaded Rewarded Interstitial: " + CrossMauiMTAdmob.Current.GetNumberOfRewarededInterstitialsLoaded().ToString();
+			myLabel.Text = "Loaded Rewarded Interstitial: " + CrossMauiMTAdmob.Current.GetNumberOfRewardedInterstitialsLoaded().ToString();
 		}
 
 		private void MyAds_AdVOpened(object sender, EventArgs e)
@@ -437,5 +437,11 @@ namespace MMTAdmobSample7
             MyStack.Add(new Label { Text = "On Native Ad Closed" });
             Debug.WriteLine("Current_OnNativeAdClosed");
         }
-	}
+
+        private void ShowConsent(object sender, EventArgs e)
+        {
+            CrossMauiMTAdmob.Current.InitialiseAndShowConsentForm();
+            Debug.WriteLine("Initialise And Show Consent Form");
+        }
+    }
 }
