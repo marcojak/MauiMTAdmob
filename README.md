@@ -2,7 +2,7 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 1.3.2
+#### Latest version: 1.4.3
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
@@ -17,27 +17,28 @@ The license will help me to continue updating and supporting this plugin adding 
 
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 1.3.2)
+## Current Status (Version 1.4.3)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
 | Banner                |     :heavy_check_mark:     |   :heavy_check_mark:      |    :x:  |    :x:  |
+| Collapsible Banner    |     :heavy_check_mark:     |   :heavy_check_mark:      |    :x:  |    :x:  |
 | Interstitial          |     :heavy_check_mark:     |  :heavy_check_mark:       |    :x:  |    :x:  |
 | Rewarded              |    :heavy_check_mark:    |    :heavy_check_mark:     |    :x:  |    :x:  |
 | Rewarded Interstitial |   :heavy_check_mark:    |    :x:*  |    :x:  |    :x:  |
 | App Open Ads          |     :heavy_check_mark:     |   :heavy_check_mark:      |    :x:  |    :x:  |
-| Native Ads          |     :heavy_check_mark:     |   :x:**      |    :x:  |    :x:  |
+| Native Ads            |     :heavy_check_mark:     |   :x:**      |    :x:  |    :x:  |
 
 *They are implemented but currently, they are not working. Probably something in the Admob SDK. I'm investigating it.
 
 ** I'm planning to add them in one of the next version, as soon as I fix some issues with the iOS SDK.
 
 ## Methods
-| **Banner** | **Interstitial**     | **Rewarded**     | **Rewarded Interstitial**  | **App Open Ads**  |
-|:----------:|--------------------|----------------|--------------------------|--------------------------|
-| LoadAd     | LoadInterstitial     | LoadRewarded     | LoadRewardedInterstitial     | - |
-|            | ShowInterstitial     | ShowRewarded     | ShowRewardedInterstitial     ||
-|            | IsInterstitialLoaded | IsRewardedLoaded | IsRewardedInterstitialLoaded ||
+|           **Consent**           |       **Banner**       | **Interstitial**     | **Rewarded**     | **Rewarded Interstitial**  | **App Open Ads**  |
+|:-------------------------------:|:----------------------:|--------------------|----------------|--------------------------|--------------------------|
+|               InitialiseAndShowConsentForm                  |         LoadAd         |   LoadInterstitial   | LoadRewarded     | LoadRewardedInterstitial     | - |
+|                                 |                        |   ShowInterstitial   | ShowRewarded     | ShowRewardedInterstitial     ||
+|                                 |                        | IsInterstitialLoaded | IsRewardedLoaded | IsRewardedInterstitialLoaded ||
 
 
 ## Events
@@ -58,6 +59,19 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 
 ## Important for iOS
 
-## Xamarin.Firebase.iOS.Core 8.10.0.1
+As the package Xamarin.Google.Mobile.iOS.MobileAds doesn't work on Windows, you need a MAC to test this library.
+If you connect your iOS device directly to Windows and run it, the library will not work.
+Unfortunately, this issue doesn't depend on this library so I cannot solve this.
 
-If you encounter this error while using this plugin, you can solve it following this comment: https://github.com/xamarin/GoogleApisForiOSComponents/issues/555#issuecomment-1145943195
+### FOR MAC USERS WITH Mx PROCESSORS
+
+If you compile the app on a Mac with Mx processors, you could get an error about architecture,
+to fix it, add to your csproj file these lines:
+
+    <PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+        <RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ForceSimulatorX64ArchitectureInIDE>true</ForceSimulatorX64ArchitectureInIDE>
+    </PropertyGroup>
