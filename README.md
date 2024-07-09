@@ -2,7 +2,7 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 1.4.3
+#### Latest version: 1.4.5
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
@@ -17,7 +17,7 @@ The license will help me to continue updating and supporting this plugin adding 
 
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 1.4.3)
+## Current Status (Version 1.4.5)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
