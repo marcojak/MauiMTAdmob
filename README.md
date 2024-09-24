@@ -2,7 +2,7 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 1.4.5
+#### Latest version: 1.6.4
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
@@ -12,12 +12,13 @@
 If you like, you can use the unlicensed version of the plugin and implement your choice of Certified CMP.
 The license will help me to continue updating and supporting this plugin adding all the newer features that Google implements.**
 
-**App Onen Ads and Native Ads are available only in the licensed version**
+**App Open Ads and Native Ads are available only in the licensed version**
+**The licensed version allows to preload multiple ads and show them when you prefer**
 
 
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 1.4.5)
+## Current Status (Version 1.5.1)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
@@ -62,6 +63,10 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 As the package Xamarin.Google.Mobile.iOS.MobileAds doesn't work on Windows, you need a MAC to test this library.
 If you connect your iOS device directly to Windows and run it, the library will not work.
 Unfortunately, this issue doesn't depend on this library so I cannot solve this.
+
+If you get an error saying that the compiler cannot find the Init method, just update your MAUI workload to the latest version.
+After that, everything will work correctly.
+
 
 ### FOR MAC USERS WITH Mx PROCESSORS
 

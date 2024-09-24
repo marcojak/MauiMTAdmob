@@ -65,6 +65,7 @@ namespace MMTAdmobSample
                 CrossMauiMTAdmob.Current.OnAppOpenFailedToShow += Current_OnAppOpenFailedToShow;
                 CrossMauiMTAdmob.Current.OnAppOpenImpression += Current_OnAppOpenImpression;
                 CrossMauiMTAdmob.Current.OnAppOpenClicked += Current_OnAppOpenClicked;
+                
                 CrossMauiMTAdmob.Current.OnMobileAdsInitialized += Current_OnMobileAdsInitialized;
               
                 CrossMauiMTAdmob.Current.OnNativeAdLoaded += Current_OnNativeAdLoaded;
@@ -73,7 +74,43 @@ namespace MMTAdmobSample
                 CrossMauiMTAdmob.Current.OnNativeAdClicked += Current_OnNativeAdClicked;
                 CrossMauiMTAdmob.Current.OnNativeAdOpened += Current_OnNativeAdOpened;
                 CrossMauiMTAdmob.Current.OnNativeAdClosed += Current_OnNativeAdClosed;
+                
+                CrossMauiMTAdmob.Current.OnConsentFormLoadSuccess += Current_OnConsentFormLoadSuccess;
+                CrossMauiMTAdmob.Current.OnConsentFormLoadFailure += Current_OnConsentFormLoadFailure;
+                CrossMauiMTAdmob.Current.OnConsentFormDismissed += Current_OnConsentFormDismissed;
+                CrossMauiMTAdmob.Current.OnConsentInfoUpdateSuccess += Current_OnConsentInfoUpdateSuccess;
+                CrossMauiMTAdmob.Current.OnConsentInfoUpdateFailure += Current_OnConsentInfoUpdateFailure;
             }
+        }
+        
+        private void Current_OnConsentInfoUpdateFailure(object sender, MTEventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On Consent Info Update Failure" });
+            Debug.WriteLine($"Current_OnConsentInfoUpdateFailure: {e.ErrorCode} - {e.ErrorMessage}");
+        }
+        
+        private void Current_OnConsentInfoUpdateSuccess(object sender, EventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On Consent Info Update Success" });
+            Debug.WriteLine("Current_OnConsentInfoUpdateSuccess");
+        }
+        
+        private void Current_OnConsentFormDismissed(object sender, EventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On Consent Form Dismissed" });
+            Debug.WriteLine("Current_OnConsentFormDismissed");
+        }
+        
+        private void Current_OnConsentFormLoadFailure(object sender, MTEventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On Consent Form Load Failure" });
+            Debug.WriteLine($"Current_OnConsentFormLoadFailure: {e.ErrorCode} - {e.ErrorMessage}");
+        }
+        
+        private void Current_OnConsentFormLoadSuccess(object sender, EventArgs e)
+        {
+            MyStack.Add(new Label { Text = "On Consent Form Load Success" });
+            Debug.WriteLine("Current_OnConsentFormLoadSuccess");
         }
 
         private void DisableEvents()
@@ -110,6 +147,12 @@ namespace MMTAdmobSample
             CrossMauiMTAdmob.Current.OnNativeAdClicked -= Current_OnNativeAdClicked;
             CrossMauiMTAdmob.Current.OnNativeAdOpened -= Current_OnNativeAdOpened;
             CrossMauiMTAdmob.Current.OnNativeAdClosed -= Current_OnNativeAdClosed;
+            
+            CrossMauiMTAdmob.Current.OnConsentFormLoadSuccess -= Current_OnConsentFormLoadSuccess;
+            CrossMauiMTAdmob.Current.OnConsentFormLoadFailure -= Current_OnConsentFormLoadFailure;
+            CrossMauiMTAdmob.Current.OnConsentFormDismissed -= Current_OnConsentFormDismissed;
+            CrossMauiMTAdmob.Current.OnConsentInfoUpdateSuccess -= Current_OnConsentInfoUpdateSuccess;
+            CrossMauiMTAdmob.Current.OnConsentInfoUpdateFailure -= Current_OnConsentInfoUpdateFailure;
         }
 
         private void Current_OnRewardImpression(object sender, EventArgs e)

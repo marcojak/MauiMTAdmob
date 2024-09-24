@@ -32,6 +32,10 @@
 	<string>ca-app-pub-3940256099942544~3347511713</string>
 	<key>GADDelayAppMeasurementInit</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

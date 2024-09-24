@@ -19,8 +19,11 @@ namespace MMTAdmobSample
             string OPENADS_AD_UNIT_ID = "ca-app-pub-3940256099942544/9257395921";
             string NATIVEADS_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
             bool enableOpenAds = false;
-            bool initialiseConsentAtStartup = false;
+            bool initialiseConsentAtStartup = true;
             //If you have a license code:
+            
+            CrossMauiMTAdmob.Current.SkipConsent = true;
+            
             CrossMauiMTAdmob.Current.Init(this, appId, license, NATIVEADS_AD_UNIT_ID,OPENADS_AD_UNIT_ID, enableOpenAds, false, deviceId, true, Plugin.MauiMTAdmob.Extra.DebugGeography.DEBUG_GEOGRAPHY_EEA, initialiseConsentAtStartup);
 
             //If you don't have a license code, you can use the following line instead:

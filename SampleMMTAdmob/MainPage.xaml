@@ -84,9 +84,9 @@
                         <Button Text="Load Banner" Clicked="LoadBanner" Margin="5" HorizontalOptions="Center"/>
                         <Label Text="Collapsible mode" HorizontalOptions="Center"/>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <RadioButton x:Name="rbNone" Content="None" IsChecked="True" />
-                            <RadioButton x:Name="rbTop" Content="Top" />
-                            <RadioButton x:Name="rbBottom" Content="Bottom"/>
+                            <RadioButton x:Name="rbNone" Content="None" IsChecked="True" TextColor="Gray"  />
+                            <RadioButton x:Name="rbTop" Content="Top" TextColor="Gray" />
+                            <RadioButton x:Name="rbBottom" Content="Bottom" TextColor="Gray" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
