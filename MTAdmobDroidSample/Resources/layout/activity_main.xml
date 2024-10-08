@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/titleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="MTAdmob"
+            android:textStyle="bold" />
+
+    <TextView
+            android:id="@+id/txtMessageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/titleLabel"
+            android:text="text message" />
+
+    <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txtMessageLabel"
+            android:layout_above="@id/eventLayout">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:spacing="5dp"
+                android:minHeight="200dp">
+
+<!--            <LinearLayout android:layout_width="wrap_content"-->
+<!--                          android:layout_height="wrap_content"-->
+<!--                          android:layout_gravity="center">-->
+<!--                <Button-->
+<!--                        android:id="@+id/showInspectorButton"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Open inspector"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_margin="5dp"/>-->
+<!--                <Button-->
+<!--                        android:id="@+id/showDebugMenuButton"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Open Debug menu"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_margin="5dp"/>-->
+<!--            </LinearLayout>-->
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:padding="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Consent" />
+
+                    <Button
+                            android:id="@+id/showConsentButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Show consent"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:padding="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Banner"/>
+
+                    <Plugin.DroidMTAdmob.Controls.MTAdView
+                            android:id="@+id/adView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            app:AdsId="ca-app-pub-3940256099942544/2014213617"
+                            app:AdSize="AnchoredAdaptive"
+                            android:visibility="visible"/>
+
+                    <Button
+                            android:id="@+id/loadBannerButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Load Banner"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Collapsible mode"
+                            android:layout_gravity="center"/>
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                        <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+                            <RadioButton
+                                    android:id="@+id/rbNone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="None"
+                                    android:checked="true"
+                                    android:textColor="@android:color/darker_gray"/>
+
+                            <RadioButton
+                                    android:id="@+id/rbTop"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Top"
+                                    android:textColor="@android:color/darker_gray"/>
+
+                            <RadioButton
+                                    android:id="@+id/rbBottom"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bottom"
+                                    android:textColor="@android:color/darker_gray"/>
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:padding="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Native ads" />
+
+                    
+                    
+                    <Plugin.DroidMTAdmob.Controls.MTNativeAdView
+                            android:id="@+id/myNativeAds"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            app:custom_layout="@layout/custom_nativeadview"/>
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                        <Button
+                                android:id="@+id/loadNativeButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Load Native Ad"
+                                android:layout_margin="5dp"
+                                android:onClick="LoadNative" />
+
+                        <Button
+                                android:id="@+id/showNativeButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Show Native Ad"
+                                android:layout_margin="5dp"
+                                android:onClick="ShowNative" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:padding="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dip"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Interstitial" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                        <Button
+                                android:id="@+id/loadInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Load"
+                                android:layout_margin="2dp"
+                                android:onClick="LoadInterstitial_OnClicked" />
+
+                        <Button
+                                android:id="@+id/showInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Show"
+                                android:layout_margin="2dp"/>
+
+                        <Button
+                                android:id="@+id/IsLoadedInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Is Loaded"
+                                android:layout_margin="2dp" />
+
+                        <Button
+                                android:id="@+id/getNumInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="N. of loaded ads"
+                                android:layout_margin="2dp" />
+
+                        <Button
+                                android:id="@+id/emptyInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Empty list"
+                                android:layout_margin="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:padding="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dip"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rewarded" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                        <Button
+                                android:id="@+id/loadRewardedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Load"
+                                android:layout_margin="2dp"/>
+
+                        <Button
+                                android:id="@+id/showRewardedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Show"
+                                android:layout_margin="2dp" />
+
+                        <Button
+                                android:id="@+id/IsLoadedRewardedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Is Loaded"
+                                android:layout_margin="2dp"/>
+
+                        <Button
+                                android:id="@+id/getNumRewardedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="N. of loaded ads"
+                                android:layout_margin="2dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:padding="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dip"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rewarded Interstitial" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                        <Button
+                                android:id="@+id/loadRewardedInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Load"
+                                android:layout_margin="2dp" />
+
+                        <Button
+                                android:id="@+id/showRewardedInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Show"
+                                android:layout_margin="2dp" />
+
+                        <Button
+                                android:id="@+id/IsLoadedRewardedInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Is Loaded"
+                                android:layout_margin="2dp" />
+
+                        <Button
+                                android:id="@+id/getNumRewardedInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="N. of loaded ads"
+                                android:layout_margin="2dp" />
+
+                        <Button
+                                android:id="@+id/emptyRewardedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Empty list"
+                                android:layout_margin="2dp"/>
+                        <Button
+                                android:id="@+id/emptyRewardedInterstitialButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Empty list"
+                                android:layout_margin="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/border"
+                    android:padding="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UMP (PRO)"
+                            android:layout_margin="5dp" />
+
+                    <TextView
+                            android:id="@+id/LabelLicense"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Not licensed"
+                            android:layout_margin="5dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/border"
+                        android:gravity="center">
+
+                    <Button
+                            android:id="@+id/ShowFormButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Show Form"
+                            android:layout_margin="5dp"
+                            android:onClick="Button_Clicked" />
+
+                    <Button
+                            android:id="@+id/ResetFormButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reset"
+                            android:layout_margin="5dp"
+                            android:onClick="ResetForm" />
+
+                    <Button
+                            android:id="@+id/CheckConsentButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Check Consent"
+                            android:layout_margin="5dp"
+                            android:onClick="CheckConsent" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                    <Button
+                            android:id="@+id/CheckPAButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Check PA"
+                            android:layout_margin="5dp"
+                            android:onClick="Button_Clicked_1" />
+
+                    <Button
+                            android:id="@+id/CheckNPAButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Check NPA"
+                            android:layout_margin="5dp" />
+
+                    <Button
+                            android:id="@+id/CheckLAButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Check LA"
+                            android:layout_margin="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            
+        </LinearLayout>
+        
+        
+    </ScrollView>
+
+    <LinearLayout
+            android:id="@+id/eventLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:background="@drawable/border"
+            android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Events"
+                    android:gravity="center_horizontal" />
+            
+            <TextView
+                    android:id="@+id/clearEventsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear events"
+                    android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:id="@+id/MyStack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp" />
+    </LinearLayout>
+</RelativeLayout>

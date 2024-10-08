@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMTAdmobSample", "SampleMMT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMTAdmobSample7", "MMTAdmobSample7\MMTAdmobSample7.csproj", "{AB112955-F989-45EC-8C95-AD6DD6BD3F53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTAdmobDroidSample", "MTAdmobDroidSample\MTAdmobDroidSample.csproj", "{1A1F7849-5331-4C52-9398-495CC7EA3855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB112955-F989-45EC-8C95-AD6DD6BD3F53}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1A1F7849-5331-4C52-9398-495CC7EA3855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1F7849-5331-4C52-9398-495CC7EA3855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1F7849-5331-4C52-9398-495CC7EA3855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1F7849-5331-4C52-9398-495CC7EA3855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
