@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net8.0-android</TargetFramework>
         <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
@@ -10,6 +10,9 @@
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     </PropertyGroup>
     <ItemGroup>
+      <PackageReference Include="Plugin.DroidMTAdmob" Version="1.0.0" />
+    </ItemGroup>
+    <ItemGroup>
       <AndroidResource Update="Resources\layout\custom_nativeadview.xml">
         <SubType>Designer</SubType>
         <Generator>MSBuild:UpdateGeneratedFiles</Generator>
@@ -19,10 +22,7 @@
         <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       </AndroidResource>
     </ItemGroup>
-<!--    <ItemGroup>-->
-<!--      <PackageReference Include="Plugin.DroidMTAdmob" Version="0.9.0" />-->
-<!--    </ItemGroup>-->
-    <ItemGroup>
+    <!--<ItemGroup>
       <ProjectReference Include="..\MTAdmobAndroid\MTAdmobAndroid.csproj" />
-    </ItemGroup>
+    </ItemGroup>-->
 </Project>
