@@ -2,7 +2,7 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 1.6.4
+#### Latest version: 2.0.1
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
@@ -18,7 +18,7 @@ The license will help me to continue updating and supporting this plugin adding 
 
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 1.5.1)
+## Current Status (Version 2.0.1)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
@@ -26,7 +26,7 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 | Collapsible Banner    |     :heavy_check_mark:     |   :heavy_check_mark:      |    :x:  |    :x:  |
 | Interstitial          |     :heavy_check_mark:     |  :heavy_check_mark:       |    :x:  |    :x:  |
 | Rewarded              |    :heavy_check_mark:    |    :heavy_check_mark:     |    :x:  |    :x:  |
-| Rewarded Interstitial |   :heavy_check_mark:    |    :x:*  |    :x:  |    :x:  |
+| Rewarded Interstitial |   :heavy_check_mark:    |    :heavy_check_mark:  |    :x:  |    :x:  |
 | App Open Ads          |     :heavy_check_mark:     |   :heavy_check_mark:      |    :x:  |    :x:  |
 | Native Ads            |     :heavy_check_mark:     |   :x:**      |    :x:  |    :x:  |
 
