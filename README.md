@@ -28,11 +28,9 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 | Rewarded              |    :heavy_check_mark:    |    :heavy_check_mark:     |    :x:  |    :x:  |
 | Rewarded Interstitial |   :heavy_check_mark:    |    :heavy_check_mark:  |    :x:  |    :x:  |
 | App Open Ads          |     :heavy_check_mark:     |   :heavy_check_mark:      |    :x:  |    :x:  |
-| Native Ads            |     :heavy_check_mark:     |   :x:**      |    :x:  |    :x:  |
+| Native Ads            |     :heavy_check_mark:     |   :x:*      |    :x:  |    :x:  |
 
-*They are implemented but currently, they are not working. Probably something in the Admob SDK. I'm investigating it.
-
-** I'm planning to add them in one of the next version, as soon as I fix some issues with the iOS SDK.
+* I'm planning to add them in one of the next version, as soon as I fix some issues with the iOS SDK.
 
 ## Methods
 |           **Consent**           |       **Banner**       | **Interstitial**     | **Rewarded**     | **Rewarded Interstitial**  | **App Open Ads**  |
