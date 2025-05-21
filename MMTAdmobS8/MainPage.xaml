@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Plugin.MauiMTAdmob.Controls;assembly=Plugin.MauiMTAdmob"
+             x:Class="MMTAdmobSample.MainPage">
+
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="TestTemplate1">
+            <Border>
+                <Grid RowDefinitions="*" ColumnDefinitions="*">
+                    <StackLayout>
+                        <controls:MTMediaView AutomationId="Media"/>
+                        <Label AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
+                        <Image AutomationId="Image" IsVisible="False"/>
+                        <Label AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
+                        <Image AutomationId="Icon"/>
+                        <controls:MTRatingView AutomationId="StarRating" HorizontalOptions="Start"/>
+                        <Label AutomationId="Store"/>
+                        <Label AutomationId="Price"/>
+                        <Label AutomationId="Advertiser"/>
+                        <Button AutomationId="CallToAction" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <Label AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start" VerticalOptions="Start"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="TestTemplate2">
+            <Border>
+                <Grid RowDefinitions="Auto,*,*" ColumnDefinitions="250,*" HorizontalOptions="FillAndExpand">
+                    <Label Grid.Row="0" Grid.Column="0" AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start"/>
+                    <Label Grid.Row="1" Grid.Column="0" AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
+                    <Label Grid.Row="1" Grid.Column="1" AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
+                    <controls:MTMediaView Grid.Row="2" Grid.ColumnSpan="2" AutomationId="Media"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="TestTemplate3">
+            <Border>
+                <StackLayout>
+                    <Label AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start" VerticalOptions="Start"/>
+                    <controls:MTMediaView AutomationId="Media"/>
+                    <Label AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
+                    <Label AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
+                </StackLayout>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="TestTemplate4">
+            <Border>
+                <Grid RowDefinitions="60,60" ColumnDefinitions="150,*">
+                    <controls:MTMediaView Grid.RowSpan="2" AutomationId="Media"/>
+                    <Label AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start" VerticalOptions="Start"/>
+                    <Label Grid.Column="1" AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
+                    <Label Grid.Row="1" Grid.Column="1" AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label Text="MTAdmob" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start" />
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Margin="5" Spacing="5" MinimumHeightRequest="200">
+                <Frame Padding="5">
+                    <StackLayout>
+                        <Label Text="Consent" />
+                        <Button Text="Show consent" Clicked="ShowConsent" Margin="5" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Padding="5">
+                    <StackLayout>
+                        <Label Text="Banner" />
+                        <controls:MTAdView BackgroundColor="Transparent"
+                                           x:Name="myAds"
+                                           AdsId="ca-app-pub-3940256099942544/2014213617"
+                                           AdSize="AnchoredAdaptive"
+                                           IsVisible="true"
+                                           AdsClicked="MyAds_AdsClicked"
+                                           AdsClosed="MyAds_AdVClosed"
+                                           AdsFailedToLoad="MyAds_AdFailedToLoad"
+                                           AdsImpression="MyAds_AdVImpression"
+                                           AdsLoaded="MyAds_AdLoaded"
+                                           AdsOpened="MyAds_AdVOpened"/>
+                        <Button Text="Load Banner" Clicked="LoadBanner" Margin="5" HorizontalOptions="Center"/>
+                        <Label Text="Collapsible mode" HorizontalOptions="Center"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <RadioButton x:Name="rbNone" Content="None" IsChecked="True" TextColor="Gray"  />
+                            <RadioButton x:Name="rbTop" Content="Top" TextColor="Gray" />
+                            <RadioButton x:Name="rbBottom" Content="Bottom" TextColor="Gray" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Padding="5">
+                    <StackLayout>
+                        <Label Text="Native ads" />
+                        <controls:MTNativeAdView BackgroundColor="Transparent" x:Name="myNativeAds" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ContentTemplate="{StaticResource Key=TestTemplate1}"/>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="Load Native Ad" Clicked="LoadNative" Margin="5" HorizontalOptions="Center"/>
+                            <Button Text="Show Native Ad" Clicked="ShowNative" Margin="5" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Padding="5">
+                    <StackLayout>
+                        <Label Text="Interstitial"/>
+                        <FlexLayout AlignItems="Center" JustifyContent="Center" Wrap="Wrap">
+                            <Button Text="Load" Clicked="LoadInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="Show" Clicked="ShowInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="Is Loaded" Clicked="IsLoadedInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="N. of loaded ads" Clicked="GetNumOfLoadedInterstitials" Margin="2"/>
+                            <Button Text="Empty list" Clicked="EmptyInterstitialList" Margin="2"/>
+                        </FlexLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Padding="5">
+                    <StackLayout>
+                        <Label Text="Rewarded"/>
+                        <FlexLayout AlignItems="Center" JustifyContent="Center" Wrap="Wrap">
+                            <Button Text="Load" Clicked="LoadReward_OnClicked" Margin="2"/>
+                            <Button Text="Show" Clicked="ShowReward_OnClicked" Margin="2"/>
+                            <Button Text="Is Loaded" Clicked="IsRewardLoaded_OnClicked" Margin="2"/>
+                            <Button Text="N. of loaded ads" Clicked="GetNumOfLoadedRewarded" Margin="2"/>
+                            <Button Text="Empty list" Clicked="EmptyRewardedList" Margin="2"/>
+                        </FlexLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Padding="5">
+                    <StackLayout>
+                        <Label Text="Rewarded Interstitial"/>
+                        <FlexLayout AlignItems="Center" JustifyContent="Center" Wrap="Wrap">
+                            <Button Text="Load" Clicked="LoadRewardInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="Show" Clicked="ShowRewardInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="Is Loaded" Clicked="IsRewardLoadedInterstitial_OnClicked" Margin="2"/>
+                            <Button Text="N. of loaded ads" Clicked="GetNumOfLoadedRewardedInterstitial" Margin="2"/>
+                            <Button Text="Empty list" Clicked="EmptyRewardedInterstitialList" Margin="2"/>
+                        </FlexLayout>
+                    </StackLayout>
+                </Frame>
+                
+                <Border>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="UMP (PRO)" Margin="5"/>
+                            <Label x:Name="LabelLicense" Text="Not licensed" Margin="5"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="Show Form" Clicked="Button_Clicked"  Margin="5"/>
+                            <Button Text="Reset" Clicked="ResetForm"  Margin="5"/>
+                            <Button Text="Check Consent" Clicked="CheckConsent"  Margin="5"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="Check PA" Clicked="Button_Clicked_1"  Margin="5"/>
+                            <Button Text="Check NPA" Clicked="Button_Clicked_2"  Margin="5"/>
+                            <Button Text="Check LA" Clicked="Button_Clicked_3"  Margin="5"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Border>
+                <Button Text="Next Page" Clicked="NextPage" Margin="5" HorizontalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+        <Border Margin="5,1">
+            <StackLayout Margin="5">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Events" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+                    <Label Text="Clear events" HorizontalTextAlignment="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClearEvents"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout x:Name="MyStack" Margin="5">
+                </StackLayout>
+            </StackLayout>
+        </Border>
+        <Border Margin="5,1">
+            <Label Margin="5" x:Name="myLabel" Text="Ads loading result" HorizontalOptions="Center" VerticalOptions="Start" />
+        </Border>
+    </StackLayout>
+</ContentPage>
