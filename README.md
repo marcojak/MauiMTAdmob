@@ -2,7 +2,7 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 2.3.1
+#### Latest version: 2.5.1 ([what's new](CHANGELOG.md))
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
@@ -16,9 +16,17 @@ The license will help me to continue updating and supporting this plugin, adding
 **The licensed version allows to preload multiple ads and show them when you prefer**
 
 
+## Requirements
+- .NET 10 (version 2.5.0 and later). If you are still on .NET 9, use version 2.4.0.
+- Android and iOS (iOS 15.4 or later).
+
+## Sample
+[MMTAdmobS10](MMTAdmobS10) is a complete .NET 10 sample app showing every ad type, consent and App Tracking Transparency.
+Its license key only works with the sample's own application ID: replace it with yours.
+
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 2.3.1)
+## Current Status (Version 2.5.1)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
@@ -55,6 +63,27 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 
 
 ## Important for iOS
+
+Add your AdMob app ID to your Info.plist:
+
+```xml
+<key>GADApplicationIdentifier</key>
+<string>YOUR APPLICATION ID</string>
+```
+
+To show the App Tracking Transparency dialog (the plugin asks for it after the consent form), also add:
+
+```xml
+<key>NSUserTrackingUsageDescription</key>
+<string>This identifier will be used to deliver personalized ads to you.</string>
+```
+
+Without this key iOS never shows the dialog and tracking is always denied.
+
+### Consent form not showing?
+Turn on debug mode (`debugMode: true` in `Init`, or `CrossMauiMTAdmob.Current.DebugMode = true`). The plugin then logs each step of the consent flow, prefixed with `[MauiMTAdmob]`, so you can tell a form that was not required from one that failed.
+
+### Testing on Windows
 
 As the package Xamarin.Google.Mobile.iOS.MobileAds doesn't work on Windows, you need a MAC to test this library.
 If you connect your iOS device directly to Windows and run it, the library will not work.

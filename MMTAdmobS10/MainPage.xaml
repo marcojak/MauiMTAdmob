@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Plugin.MauiMtAdmob.Controls;assembly=Plugin.MauiMtAdmob"
+             x:Class="MMTAdmobSample10.MainPage"
+             Title="MTAdmob Test App"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.Resources>
+        <Style x:Key="SectionFrameStyle" TargetType="Border">
+            <Setter Property="Stroke" Value="#E0E0E0" />
+            <Setter Property="StrokeThickness" Value="1" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="StrokeShape" Value="RoundRectangle 8" />
+            <Setter Property="Margin" Value="0,0,0,8" />
+            <Setter Property="Padding" Value="4" />
+        </Style>
+        <Style x:Key="SectionTitleStyle" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextColor" Value="#2C3E50" />
+            <Setter Property="Margin" Value="0,0,0,8" />
+        </Style>
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#3498DB" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="4" />
+        </Style>
+        <Style x:Key="SecondaryButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#95A5A6" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="4" />
+        </Style>
+        <Style x:Key="StatusButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#27AE60" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="4" />
+        </Style>
+        <Style x:Key="WarningButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#E74C3C" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="4" />
+        </Style>
+        <ControlTemplate x:Key="TestTemplate1">
+            <Border>
+                <Grid RowDefinitions="*" ColumnDefinitions="*">
+                    <StackLayout>
+                        <controls:MTMediaView AutomationId="Media" HeightRequest="120" WidthRequest="120"/>
+                        <Label AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
+                        <Image AutomationId="Image" IsVisible="True" HeightRequest="60" WidthRequest="60"/>
+                        <Label AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
+                        <Image AutomationId="Icon" HeightRequest="30" WidthRequest="30"/>
+                        <controls:MTRatingView AutomationId="StarRating" HorizontalOptions="Start"/>
+                        <Label AutomationId="Store" HorizontalTextAlignment="Center"/>
+                        <Label AutomationId="Price" HorizontalOptions="End"/>
+                        <Label AutomationId="Advertiser" HorizontalOptions="Center"/>
+                        <Button AutomationId="CallToAction" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <Label AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start" VerticalOptions="Start"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="TestTemplate2">
+            <Border Margin="5">
+                <Grid RowDefinitions="Auto,*,*" ColumnDefinitions="*,*" HorizontalOptions="FillAndExpand">
+                    <Label Grid.Row="0" Grid.Column="0" AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start"/>
+                    <Label Grid.Row="1" Grid.Column="0" AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
+                    <Label Grid.Row="1" Grid.Column="1" AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
+                    <controls:MTMediaView Grid.Row="2" Grid.ColumnSpan="2" AutomationId="Media" HeightRequest="120" WidthRequest="120"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="TestTemplate3">
+            <Border>
+                <StackLayout>
+                    <Label AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start" VerticalOptions="Start"/>
+                    <controls:MTMediaView AutomationId="Media"/>
+                    <Label AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
+                    <Label AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
+                </StackLayout>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="TestTemplate4">
+            <Border>
+                <Grid RowDefinitions="60,60" ColumnDefinitions="150,*">
+                    <controls:MTMediaView Grid.RowSpan="2" AutomationId="Media"/>
+                    <Label AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start" VerticalOptions="Start"/>
+                    <Label Grid.Column="1" AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
+                    <Label Grid.Row="1" Grid.Column="1" AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="TestTemplate5">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="A"/>
+                <Label Text="B"/>
+                <Label Text="C"/>
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*,Auto,Auto">
+        <!-- Main Content -->
+        <ScrollView Grid.Row="1" Margin="8,4,8,4">
+            <StackLayout Spacing="2">
+                
+                <!-- UMP Section -->
+                <Border Style="{StaticResource SectionFrameStyle}">
+                    <StackLayout>
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label Text="Consent Management (PRO)" 
+                                   Style="{StaticResource SectionTitleStyle}" 
+                                   Grid.Column="0"/>
+                            <Label x:Name="LabelLicense" 
+                                   Text="Not licensed" 
+                                   Style="{StaticResource SectionTitleStyle}" 
+                                   TextColor="#E74C3C" 
+                                   FontAttributes="Bold" 
+                                   Grid.Column="1" 
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                        
+                        <!-- ATT and Consent Management -->
+                        <Grid ColumnDefinitions="*,*,*" HorizontalOptions="FillAndExpand">
+                            <Button Text="Load Consent" 
+                                    Clicked="LoadConsent_OnClicked" 
+                                    Style="{StaticResource ActionButtonStyle}" 
+                                    Grid.Column="0"/>
+                            <Button Text="Request ATT" 
+                                    Clicked="RequestATT_OnClicked" 
+                                    Style="{StaticResource StatusButtonStyle}" 
+                                    Grid.Column="1"/>
+                            <Button Text="Get ATT Status" 
+                                    Clicked="GetATTStatus_OnClicked" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="2"/>
+                        </Grid>
+                        
+                        <!-- Main UMP Actions -->
+                        <Grid ColumnDefinitions="*,*,*" HorizontalOptions="FillAndExpand">
+                            <Button Text="Show Form" 
+                                    Clicked="Button_Clicked" 
+                                    Style="{StaticResource ActionButtonStyle}" 
+                                    Grid.Column="0"/>
+                            <Button Text="Reset" 
+                                    Clicked="ResetForm" 
+                                    Style="{StaticResource WarningButtonStyle}" 
+                                    Grid.Column="1"/>
+                            <Button Text="Check Consent" 
+                                    Clicked="CheckConsent" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="2"/>
+                        </Grid>
+                        
+                        <!-- Ad Capabilities Check -->
+                        <Grid ColumnDefinitions="*,*,*" HorizontalOptions="FillAndExpand">
+                            <Button Text="Check Pers Ads" 
+                                    Clicked="Button_Clicked_1"
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="0"/>
+                            <Button Text="Check Non Pers Ads" 
+                                    Clicked="Button_Clicked_2" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="1"/>
+                            <Button Text="Check Limited ads" 
+                                    Clicked="Button_Clicked_3" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="2"/>
+                        </Grid>
+                    </StackLayout>
+                </Border>
+                
+                <!-- Banner Section -->
+                <Border Style="{StaticResource SectionFrameStyle}">
+                    <StackLayout>
+                        <Label Text="Banner Ads" Style="{StaticResource SectionTitleStyle}"/>
+                        <controls:MTAdView BackgroundColor="Transparent"
+                                           x:Name="myAds"
+                                           AdsId="ca-app-pub-3940256099942544/2014213617"
+                                           AdSize="AnchoredAdaptive"
+                                           IsVisible="true"
+                                           AdsClicked="MyAds_AdsClicked"
+                                           AdsClosed="MyAds_AdVClosed"
+                                           AdsFailedToLoad="MyAds_AdFailedToLoad"
+                                           AdsImpression="MyAds_AdVImpression"
+                                           AdsLoaded="MyAds_AdLoaded"
+                                           AdsOpened="MyAds_AdVOpened"/>
+                        <Button Text="Load Banner" 
+                                Clicked="LoadBanner" 
+                                Style="{StaticResource ActionButtonStyle}" 
+                                HorizontalOptions="Center"/>
+                        <Label Text="Collapsible Mode" 
+                               HorizontalOptions="Center" 
+                               FontSize="14" 
+                               TextColor="#7F8C8D"/>
+                        <Grid ColumnDefinitions="*,*,*" HorizontalOptions="Center">
+                            <RadioButton x:Name="rbNone" 
+                                        Content="None" 
+                                        IsChecked="True" 
+                                        TextColor="#34495E" 
+                                        Grid.Column="0"/>
+                            <RadioButton x:Name="rbTop" 
+                                        Content="Top" 
+                                        TextColor="#34495E" 
+                                        Grid.Column="1"/>
+                            <RadioButton x:Name="rbBottom" 
+                                        Content="Bottom" 
+                                        TextColor="#34495E" 
+                                        Grid.Column="2"/>
+                        </Grid>
+                    </StackLayout>
+                </Border>
+
+                <!-- Native Ads Section -->
+                <Border Style="{StaticResource SectionFrameStyle}">
+                    <StackLayout>
+                        <Label Text="Native Ads" Style="{StaticResource SectionTitleStyle}"/>
+                        <controls:MTNativeAdView BackgroundColor="Transparent" 
+                                                x:Name="myNativeAds" 
+                                                HorizontalOptions="FillAndExpand" 
+                                                VerticalOptions="FillAndExpand" 
+                                                ContentTemplate="{StaticResource Key=TestTemplate2}"/>
+                        <Grid ColumnDefinitions="*,*" HorizontalOptions="Center">
+                            <Button Text="Load Native Ad" 
+                                    Clicked="LoadNative" 
+                                    Style="{StaticResource ActionButtonStyle}" 
+                                    Grid.Column="0"/>
+                            <Button Text="Show Native Ad" 
+                                    Clicked="ShowNative" 
+                                    Style="{StaticResource StatusButtonStyle}" 
+                                    Grid.Column="1"/>
+                        </Grid>
+                    </StackLayout>
+                </Border>
+
+                <!-- Interstitial Section -->
+                <Border Style="{StaticResource SectionFrameStyle}">
+                    <StackLayout>
+                        <Label Text="Interstitial Ads" Style="{StaticResource SectionTitleStyle}"/>
+                        <Grid ColumnDefinitions="*,*,*,*,*" HorizontalOptions="Center">
+                            <Button Text="Load" 
+                                    Clicked="LoadInterstitial_OnClicked" 
+                                    Style="{StaticResource ActionButtonStyle}" 
+                                    Grid.Column="0"/>
+                            <Button Text="Show" 
+                                    Clicked="ShowInterstitial_OnClicked" 
+                                    Style="{StaticResource StatusButtonStyle}" 
+                                    Grid.Column="1"/>
+                            <Button Text="Is Loaded" 
+                                    Clicked="IsLoadedInterstitial_OnClicked" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="2"/>
+                            <Button Text="Count" 
+                                    Clicked="GetNumOfLoadedInterstitials" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="3"/>
+                            <Button Text="Clear" 
+                                    Clicked="EmptyInterstitialList" 
+                                    Style="{StaticResource WarningButtonStyle}" 
+                                    Grid.Column="4"/>
+                        </Grid>
+                    </StackLayout>
+                </Border>
+
+                <!-- Rewarded Section -->
+                <Border Style="{StaticResource SectionFrameStyle}">
+                    <StackLayout>
+                        <Label Text="Rewarded Ads" Style="{StaticResource SectionTitleStyle}"/>
+                        <Grid ColumnDefinitions="*,*,*,*,*" HorizontalOptions="Center">
+                            <Button Text="Load" 
+                                    Clicked="LoadReward_OnClicked" 
+                                    Style="{StaticResource ActionButtonStyle}" 
+                                    Grid.Column="0"/>
+                            <Button Text="Show" 
+                                    Clicked="ShowReward_OnClicked" 
+                                    Style="{StaticResource StatusButtonStyle}" 
+                                    Grid.Column="1"/>
+                            <Button Text="Is Loaded" 
+                                    Clicked="IsRewardLoaded_OnClicked" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="2"/>
+                            <Button Text="Count" 
+                                    Clicked="GetNumOfLoadedRewarded" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="3"/>
+                            <Button Text="Clear" 
+                                    Clicked="EmptyRewardedList" 
+                                    Style="{StaticResource WarningButtonStyle}" 
+                                    Grid.Column="4"/>
+                        </Grid>
+                    </StackLayout>
+                </Border>
+
+                <!-- Rewarded Interstitial Section -->
+                <Border Style="{StaticResource SectionFrameStyle}">
+                    <StackLayout>
+                        <Label Text="Rewarded Interstitial Ads" Style="{StaticResource SectionTitleStyle}"/>
+                        <Grid ColumnDefinitions="*,*,*,*,*" HorizontalOptions="Center">
+                            <Button Text="Load" 
+                                    Clicked="LoadRewardInterstitial_OnClicked" 
+                                    Style="{StaticResource ActionButtonStyle}" 
+                                    Grid.Column="0"/>
+                            <Button Text="Show" 
+                                    Clicked="ShowRewardInterstitial_OnClicked" 
+                                    Style="{StaticResource StatusButtonStyle}" 
+                                    Grid.Column="1"/>
+                            <Button Text="Is Loaded" 
+                                    Clicked="IsRewardLoadedInterstitial_OnClicked" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="2"/>
+                            <Button Text="Count" 
+                                    Clicked="GetNumOfLoadedRewardedInterstitial" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="3"/>
+                            <Button Text="Clear" 
+                                    Clicked="EmptyRewardedInterstitialList" 
+                                    Style="{StaticResource WarningButtonStyle}" 
+                                    Grid.Column="4"/>
+                        </Grid>
+                    </StackLayout>
+                </Border>
+
+                <!-- Audio Control Section -->
+                <Border Style="{StaticResource SectionFrameStyle}">
+                    <StackLayout>
+                        <Label Text="Audio Controls" Style="{StaticResource SectionTitleStyle}"/>
+                        <Label Text="Volume" HorizontalOptions="Center" FontSize="14" TextColor="#7F8C8D"/>
+                        <Slider x:Name="volumeSlider" 
+                                Minimum="0" 
+                                Maximum="1" 
+                                Value="0.5" 
+                                HorizontalOptions="FillAndExpand" 
+                                Margin="16,0,16,8"/>
+                        <Grid ColumnDefinitions="*,*,*" HorizontalOptions="Center">
+                            <Button Text="Mute Ads" 
+                                    Clicked="MuteAds_OnClicked" 
+                                    Style="{StaticResource WarningButtonStyle}" 
+                                    Grid.Column="0"/>
+                            <Button Text="Unmute Ads" 
+                                    Clicked="UnmuteAds_OnClicked" 
+                                    Style="{StaticResource StatusButtonStyle}" 
+                                    Grid.Column="1"/>
+                            <Button Text="Set Volume" 
+                                    Clicked="SetVolume_OnClicked" 
+                                    Style="{StaticResource SecondaryButtonStyle}" 
+                                    Grid.Column="2"/>
+                        </Grid>
+                    </StackLayout>
+                </Border>
+
+                <!-- SDK Info Section -->
+                <Border Style="{StaticResource SectionFrameStyle}">
+                    <StackLayout>
+                        <Label Text="SDK Information" Style="{StaticResource SectionTitleStyle}"/>
+                        <Button Text="Get SDK Version" 
+                                Clicked="GetSdkVersion_OnClicked" 
+                                Style="{StaticResource StatusButtonStyle}" 
+                                HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Border>
+
+                <!-- Navigation -->
+                <Button Text="Next Page" 
+                        Clicked="NextPage" 
+                        Style="{StaticResource SecondaryButtonStyle}" 
+                        HorizontalOptions="Center" 
+                        Margin="0,8,0,0"/>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Events Section -->
+        <Border Grid.Row="2" 
+                Style="{StaticResource SectionFrameStyle}" 
+                Margin="8,4,8,4">
+            <StackLayout>
+                <Grid ColumnDefinitions="*,Auto">
+                    <Label Text="Events Log" 
+                           Style="{StaticResource SectionTitleStyle}" 
+                           Grid.Column="0"/>
+                    <Label Text="Clear" 
+                           TextColor="#3498DB" 
+                           FontAttributes="Bold" 
+                           Grid.Column="1" 
+                           VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ClearEvents"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <ScrollView HeightRequest="110" BackgroundColor="#F8F9FA">
+                    <StackLayout x:Name="MyStack" Margin="8"/>
+                </ScrollView>
+            </StackLayout>
+        </Border>
+
+        <!-- Status Bar -->
+        <Border Grid.Row="3" 
+                Style="{StaticResource SectionFrameStyle}" 
+                Margin="8,4,8,8" 
+                BackgroundColor="#ECF0F1">
+            <Label x:Name="myLabel" 
+                   Text="Ready" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="14" 
+                   TextColor="#2C3E50"/>
+        </Border>
+    </Grid>
+</ContentPage>

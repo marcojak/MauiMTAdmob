@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32708.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTAdmobDroidSample", "MTAdmobDroidSample\MTAdmobDroidSample.csproj", "{1A1F7849-5331-4C52-9398-495CC7EA3855}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMTAdmobS9", "MMTAdmobS9\MMTAdmobS9.csproj", "{9A190C15-E7C3-EE58-D753-B0C4BF40ADB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMTAdmobS10", "MMTAdmobS10\MMTAdmobS10.csproj", "{9A190C15-E7C3-EE58-D753-B0C4BF40ADB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
