@@ -18,6 +18,7 @@ Android moves to Google's [Mobile Ads Next-Gen SDK](https://developers.google.co
 - Android native ads are destroyed when replaced or when their view is removed.
 - Android interstitials ignore the back key (Next-Gen SDK behaviour).
 - Only AdMob mediation is supported on Android. Stay on 2.x if you mediate through another platform or need minSdk below 24.
+- Licensing: a "1 Major Version" licence key bought for 2.x does not unlock the licensed features on 3.x; you need a 3.x key. Perpetual ("Supporter") licences are valid for all versions.
 
 ## 2.5.1
 

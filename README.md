@@ -35,6 +35,10 @@ because Google has not released a Next-Gen SDK for iOS.
 Stay on 2.x if you need Android minSdk below 24, or if you mediate through a platform other than AdMob
 (the Next-Gen SDK only supports AdMob mediation). 2.x keeps receiving fixes.
 
+**Licence keys:** a "1 Major Version" licence is valid for the major version it was bought for. A key bought
+for 2.x keeps working on every 2.x release but does not unlock the licensed features on 3.x: for those you
+need a 3.x key. Perpetual ("Supporter") licences are valid for all versions, including 3.x.
+
 Behaviour differences on Android in 3.x:
 - `MTEventArgs.ErrorCode` keeps Google's numeric codes; `ErrorDomain` is now `com.google.android.libraries.ads.mobile.sdk`.
 - Interstitials ignore the back key, as the Next-Gen SDK does.
