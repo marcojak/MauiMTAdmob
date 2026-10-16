@@ -2,7 +2,8 @@
 # MauiMTAdmob
 
 #### Package name: Plugin.MauiMTAdmob
-#### Latest version: 2.5.1 ([what's new](CHANGELOG.md))
+#### Latest version: 3.0.0 ([what's new](CHANGELOG.md)) - Android on the Google Mobile Ads Next-Gen SDK
+#### Previous line: 2.x (legacy Google Mobile Ads SDK on Android), still maintained
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
@@ -18,7 +19,29 @@ The license will help me to continue updating and supporting this plugin, adding
 
 ## Requirements
 - .NET 10 (version 2.5.0 and later). If you are still on .NET 9, use version 2.4.0.
-- Android and iOS (iOS 15.4 or later).
+- iOS 15.4 or later.
+- Android 7.0 (API 24) or later for version 3.x; Android 5.0 (API 21) or later for version 2.x.
+
+## Version 3: Google Mobile Ads Next-Gen SDK
+From version 3.0, Android runs on Google's [Google Mobile Ads Next-Gen SDK](https://developers.google.com/admob/android/next-gen),
+which Google has made the preferred SDK for Android. iOS keeps using the Google Mobile Ads SDK 12.x,
+because Google has not released a Next-Gen SDK for iOS.
+
+**The public API is the same as in 2.x.** To update:
+1. Update `Plugin.MauiMTAdmob` to 3.0.0.
+2. Raise your Android `SupportedOSPlatformVersion` to `24.0` in your app's csproj.
+3. Leave your code as it is.
+
+Stay on 2.x if you need Android minSdk below 24, or if you mediate through a platform other than AdMob
+(the Next-Gen SDK only supports AdMob mediation). 2.x keeps receiving fixes.
+
+Behaviour differences on Android in 3.x:
+- `MTEventArgs.ErrorCode` keeps Google's numeric codes; `ErrorDomain` is now `com.google.android.libraries.ads.mobile.sdk`.
+- Interstitials ignore the back key, as the Next-Gen SDK does.
+- `AnchoredAdaptive` and `Smart` banners use Google's large anchored adaptive size.
+- Ads loaded before the SDK has finished initialising are queued and loaded as soon as it is ready.
+
+See the [changelog](CHANGELOG.md) for the full list.
 
 ## Sample
 [MMTAdmobS10](MMTAdmobS10) is a complete .NET 10 sample app showing every ad type, consent and App Tracking Transparency.
@@ -26,7 +49,7 @@ Its license key only works with the sample's own application ID: replace it with
 
 If you are looking for the Xamarin version of this plugin, you can visit: [MTAdmob](https://github.com/marcojak/MTAdmob)
 
-## Current Status (Version 2.5.1)
+## Current Status (Version 3.0.0)
 
 |                       | **Android** | **iOS** | **Windows** | **Mac** |
 |-----------------------|:-------------:|:---------:|:---------:|:---------:|
@@ -60,6 +83,18 @@ If you are looking for the Xamarin version of this plugin, you can visit: [MTAdm
 |  				  | 						   | OnUserEarnedReward   | OnUserEarnedReward||
 
 *Only supported on iOS
+
+## Ad revenue, Ad Inspector, privacy and targeting (3.0.0)
+- `OnAdPaid`: impression-level ad revenue for every format (format, ad unit, value, currency, precision, ad source).
+- `OpenAdInspector()` and `OnAdInspectorClosed`: open Google's Ad Inspector on a test device.
+- `PublisherPrivacyPersonalizationState`: Google's publisher privacy treatment.
+- `ContentUrl` and `NeighboringContentUrls`: content mapping sent with every request.
+- `CustomTargeting`: key-value targeting sent with every request (Google Ad Manager).
+
+## Native ads
+Give the `MTMediaView` in your native ad template at least 120x120: Google requires it for video ads, and the
+native ad validator flags anything smaller. In a `Grid` template, avoid `*` rows around the media view, as they
+can shrink it below its requested size. The templates in the sample show working layouts.
 
 
 ## Important for iOS

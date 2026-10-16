@@ -74,7 +74,7 @@
         </ControlTemplate>
         <ControlTemplate x:Key="TestTemplate2">
             <Border Margin="5">
-                <Grid RowDefinitions="Auto,*,*" ColumnDefinitions="*,*" HorizontalOptions="FillAndExpand">
+                <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*" HorizontalOptions="FillAndExpand">
                     <Label Grid.Row="0" Grid.Column="0" AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start"/>
                     <Label Grid.Row="1" Grid.Column="0" AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
                     <Label Grid.Row="1" Grid.Column="1" AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
@@ -86,7 +86,7 @@
             <Border>
                 <StackLayout>
                     <Label AutomationId="Attribution" Text="Ad" FontAttributes="Bold" TextColor="White" BackgroundColor="#FFCC66" FontSize="14" HorizontalOptions="Start" VerticalOptions="Start"/>
-                    <controls:MTMediaView AutomationId="Media"/>
+                    <controls:MTMediaView AutomationId="Media" HeightRequest="150" MinimumWidthRequest="120"/>
                     <Label AutomationId="Headline" FontAttributes="Bold" FontSize="12" />
                     <Label AutomationId="Body" HorizontalOptions="EndAndExpand" FontSize="14"/>
                 </StackLayout>

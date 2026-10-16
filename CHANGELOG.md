@@ -2,6 +2,23 @@
 
 Release notes for [Plugin.MauiMTAdmob](https://www.nuget.org/packages/Plugin.MauiMTAdmob/).
 
+## 3.0.0
+
+Android moves to Google's [Mobile Ads Next-Gen SDK](https://developers.google.com/admob/android/next-gen). The public API is unchanged: update the package, raise your Android `SupportedOSPlatformVersion` to `24.0`, and keep your code as it is. The 2.x line, on the legacy SDK, is still maintained for apps that cannot move yet.
+
+- Android: Google Mobile Ads Next-Gen SDK 1.4.0, through Microsoft's binding `Xamarin.Google.Android.Libraries.Ads.Mobile.Sdk`, replaces `Xamarin.GooglePlayServices.Ads.Lite`.
+- Android minSdk is now 24 (was 21), as the Next-Gen SDK requires.
+- iOS is unchanged: Google Mobile Ads SDK 12.12.0. Google has not released a Next-Gen SDK for iOS.
+- New (Android and iOS): `OnAdPaid` (impression-level ad revenue for every format), `OpenAdInspector()` and `OnAdInspectorClosed`, `PublisherPrivacyPersonalizationState`, `ContentUrl` / `NeighboringContentUrls` and `CustomTargeting`.
+- Fixed (Android): native ads now resize to their template, so assets no longer spill outside the native ad view (the native ad validator reported "assets outside native ad view" and "MediaView too small").
+- Android: `Load*`, `SetAppMuted`, `SetAppVolume` and `OpenAdInspector` called before the SDK has finished initialising are queued instead of failing.
+- Android: the request configuration (test devices, content rating, child-directed / under-age tags) applies from the first request. The child-directed and under-age tags are mapped to the Next-Gen age treatment as Google documents.
+- Android: `ErrorCode` keeps Google's numeric codes (3 = no fill, ...); `ErrorDomain` is now `com.google.android.libraries.ads.mobile.sdk`.
+- Android banners: destroyed when removed, as Google requires; refreshes raise `AdsLoaded` and update the height; `AnchoredAdaptive` and `Smart` use Google's large anchored adaptive size.
+- Android native ads are destroyed when replaced or when their view is removed.
+- Android interstitials ignore the back key (Next-Gen SDK behaviour).
+- Only AdMob mediation is supported on Android. Stay on 2.x if you mediate through another platform or need minSdk below 24.
+
 ## 2.5.1
 
 iOS consent and App Tracking Transparency fixes (licensed version):
