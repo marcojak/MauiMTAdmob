@@ -20,6 +20,18 @@ Android moves to Google's [Mobile Ads Next-Gen SDK](https://developers.google.co
 - Only AdMob mediation is supported on Android. Stay on 2.x if you mediate through another platform or need minSdk below 24.
 - Licensing: a "1 Major Version" licence key bought for 2.x does not unlock the licensed features on 3.x; you need a 3.x key. Perpetual ("Supporter") licences are valid for all versions.
 
+## 2.6.0
+
+Release of the 2.x line, which keeps Android on the legacy Google Mobile Ads SDK (minSdk 21). Version 3.x moves Android to the Next-Gen SDK with the same API.
+
+- New (Android and iOS): `OnAdPaid`, impression-level ad revenue for banners, interstitials, rewarded, rewarded interstitial, app open and native ads (format, ad unit, value, currency, precision, ad source, response id).
+- New: `OpenAdInspector()` and `OnAdInspectorClosed`, to open Google's Ad Inspector and debug requests and mediation.
+- New: `PublisherPrivacyPersonalizationState` (Google's publisher privacy treatment), `ContentUrl` and `NeighboringContentUrls` (content mapping) and `CustomTargeting` (key-value targeting for Google Ad Manager).
+- Fixed (Android): native ads now resize to their template, so assets no longer spill outside the native ad view (the native ad validator reported "assets outside native ad view" and "MediaView too small").
+- Fixed (iOS): App Open Ads now load when `SkipConsent` is set.
+- The XML documentation is now named after the assembly, so IntelliSense shows it.
+- Licensing: a "1 Major Version" licence key is valid only for the major version it was issued for, without the previous one-year grace for keys from an earlier major version. 2.x keys keep working on 2.6.0; perpetual licences are valid for all versions.
+
 ## 2.5.1
 
 iOS consent and App Tracking Transparency fixes (licensed version):

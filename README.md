@@ -3,7 +3,7 @@
 
 #### Package name: Plugin.MauiMTAdmob
 #### Latest version: 3.0.0 ([what's new](CHANGELOG.md)) - Android on the Google Mobile Ads Next-Gen SDK
-#### Previous line: 2.x (legacy Google Mobile Ads SDK on Android), still maintained
+#### 2.x line: 2.6.0 (legacy Google Mobile Ads SDK on Android), still maintained
 #### Nuget link: https://www.nuget.org/packages/Plugin.MauiMTAdmob/
 #### Guide: https://hightouchinnovation.com/MMTAdmobGuide
 #### To buy the license visit https://hightouchinnovation.com/MMTAdmob
